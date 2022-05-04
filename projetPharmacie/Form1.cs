@@ -2,7 +2,7 @@
  * Date    : 2022/05/04
  * Version : 1.0
  * Auteur  : William Desjardins
- * But: Simuler la gestion d'une pharmacie et de ses médicaments, patients et médecins.*/
+ * But     : Simuler la gestion d'une pharmacie et de ses médicaments, patients et médecins.*/
 using System;
 using System.IO;
 using System.Windows.Forms;

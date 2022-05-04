@@ -1,8 +1,8 @@
-﻿/* Objet     : Pharmacie
+﻿/* Objet   : Pharmacie
  * Date    : 2022/05/04
  * Version : 1.0
  * Auteur  : William Desjardins
- * But: Objet qui représente la pharmacie*/
+ * But     : Objet qui représente la pharmacie*/
 using System;
 
 namespace projetPharmacie
