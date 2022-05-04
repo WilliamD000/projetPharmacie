@@ -2,7 +2,7 @@
 
 namespace projetPharmacie
 {
-    class Pharmacie
+    public class Pharmacie
     {
         private int noPharmacie;
 

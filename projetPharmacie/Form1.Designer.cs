@@ -50,7 +50,15 @@ namespace projetPharmacie
             this.label11 = new System.Windows.Forms.Label();
             this.edtTelephonePharmacie = new System.Windows.Forms.TextBox();
             this.dtpDateImplantationPharmacie = new System.Windows.Forms.DateTimePicker();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.àProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.enregistrerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ouvrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.àProposToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -120,7 +128,7 @@ namespace projetPharmacie
             // 
             this.edtAdressePharmacie.Location = new System.Drawing.Point(15, 98);
             this.edtAdressePharmacie.Name = "edtAdressePharmacie";
-            this.edtAdressePharmacie.Size = new System.Drawing.Size(100, 20);
+            this.edtAdressePharmacie.Size = new System.Drawing.Size(109, 20);
             this.edtAdressePharmacie.TabIndex = 4;
             this.edtAdressePharmacie.Text = "200 rue Témiscouata";
             // 
@@ -223,7 +231,7 @@ namespace projetPharmacie
             // 
             this.edtCourrielPharmacie.Location = new System.Drawing.Point(143, 98);
             this.edtCourrielPharmacie.Name = "edtCourrielPharmacie";
-            this.edtCourrielPharmacie.Size = new System.Drawing.Size(100, 20);
+            this.edtCourrielPharmacie.Size = new System.Drawing.Size(157, 20);
             this.edtCourrielPharmacie.TabIndex = 14;
             this.edtCourrielPharmacie.Text = "experienceclient@familiprix.com";
             // 
@@ -252,17 +260,79 @@ namespace projetPharmacie
             this.dtpDateImplantationPharmacie.TabIndex = 20;
             this.dtpDateImplantationPharmacie.Value = new System.DateTime(1977, 1, 1, 0, 0, 0, 0);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fichierToolStripMenuItem,
+            this.àProposToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1215, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fichierToolStripMenuItem
+            // 
+            this.fichierToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.enregistrerToolStripMenuItem,
+            this.ouvrirToolStripMenuItem,
+            this.quitterToolStripMenuItem});
+            this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
+            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.fichierToolStripMenuItem.Text = "Fichier";
+            // 
+            // àProposToolStripMenuItem
+            // 
+            this.àProposToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.àProposToolStripMenuItem1});
+            this.àProposToolStripMenuItem.Name = "àProposToolStripMenuItem";
+            this.àProposToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.àProposToolStripMenuItem.Text = "Aide";
+            // 
+            // enregistrerToolStripMenuItem
+            // 
+            this.enregistrerToolStripMenuItem.Name = "enregistrerToolStripMenuItem";
+            this.enregistrerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.enregistrerToolStripMenuItem.Text = "Enregistrer";
+            this.enregistrerToolStripMenuItem.Click += new System.EventHandler(this.enregistrerToolStripMenuItem_Click);
+            // 
+            // ouvrirToolStripMenuItem
+            // 
+            this.ouvrirToolStripMenuItem.Name = "ouvrirToolStripMenuItem";
+            this.ouvrirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ouvrirToolStripMenuItem.Text = "Ouvrir";
+            this.ouvrirToolStripMenuItem.Click += new System.EventHandler(this.ouvrirToolStripMenuItem_Click);
+            // 
+            // quitterToolStripMenuItem
+            // 
+            this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quitterToolStripMenuItem.Text = "Quitter";
+            this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
+            // 
+            // àProposToolStripMenuItem1
+            // 
+            this.àProposToolStripMenuItem1.Name = "àProposToolStripMenuItem1";
+            this.àProposToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.àProposToolStripMenuItem1.Text = "À propos";
+            this.àProposToolStripMenuItem1.Click += new System.EventHandler(this.àProposToolStripMenuItem1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1215, 598);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Programme pharmacie";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -289,6 +359,13 @@ namespace projetPharmacie
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox edtNomPharmacie;
         private System.Windows.Forms.DateTimePicker dtpDateImplantationPharmacie;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fichierToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem enregistrerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ouvrirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quitterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem àProposToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem àProposToolStripMenuItem1;
     }
 }
 
