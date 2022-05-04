@@ -17,6 +17,7 @@ namespace projetPharmacie
         public Form1()
         {
             InitializeComponent();
+            OuvrirFichier();
         }
 
         private void btnCreerPharmacie_Click(object sender, EventArgs e)
@@ -45,6 +46,20 @@ namespace projetPharmacie
 
         private void ouvrirToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            OuvrirFichier();
+        }
+
+        private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void àProposToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(unePharmacie.ToString());
+        }
+        public void OuvrirFichier()
+        {
             try
             {
                 if (File.Exists("Pharmacie.Xml"))
@@ -67,16 +82,6 @@ namespace projetPharmacie
             {
                 MessageBox.Show("Classe cégep non détecté, veuillez créer un cégep et enregistrer.");
             }
-        }
-
-        private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void àProposToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(unePharmacie.ToString());
         }
     }
 }
