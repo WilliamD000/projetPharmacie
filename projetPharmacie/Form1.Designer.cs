@@ -57,13 +57,17 @@ namespace projetPharmacie
             this.ouvrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.àProposToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnModifierPharmacie = new System.Windows.Forms.Button();
+            this.btnSupprimerPharmacie = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnSupprimerPharmacie);
             this.panel1.Controls.Add(this.dtpDateImplantationPharmacie);
+            this.panel1.Controls.Add(this.btnModifierPharmacie);
             this.panel1.Controls.Add(this.label);
             this.panel1.Controls.Add(this.label034);
             this.panel1.Controls.Add(this.edtNoPharmacie);
@@ -104,7 +108,6 @@ namespace projetPharmacie
             this.edtNomPharmacie.Name = "edtNomPharmacie";
             this.edtNomPharmacie.Size = new System.Drawing.Size(100, 20);
             this.edtNomPharmacie.TabIndex = 2;
-            this.edtNomPharmacie.Text = "Familiprix";
             // 
             // label1
             // 
@@ -130,7 +133,6 @@ namespace projetPharmacie
             this.edtAdressePharmacie.Name = "edtAdressePharmacie";
             this.edtAdressePharmacie.Size = new System.Drawing.Size(109, 20);
             this.edtAdressePharmacie.TabIndex = 4;
-            this.edtAdressePharmacie.Text = "200 rue Témiscouata";
             // 
             // label3
             // 
@@ -147,7 +149,6 @@ namespace projetPharmacie
             this.edtVillePharmacie.Name = "edtVillePharmacie";
             this.edtVillePharmacie.Size = new System.Drawing.Size(100, 20);
             this.edtVillePharmacie.TabIndex = 6;
-            this.edtVillePharmacie.Text = "Rivière-du-Loup";
             // 
             // label4
             // 
@@ -164,7 +165,6 @@ namespace projetPharmacie
             this.edtCodePostalPharmacie.Name = "edtCodePostalPharmacie";
             this.edtCodePostalPharmacie.Size = new System.Drawing.Size(100, 20);
             this.edtCodePostalPharmacie.TabIndex = 8;
-            this.edtCodePostalPharmacie.Text = "G5R2Y5";
             // 
             // label5
             // 
@@ -181,7 +181,6 @@ namespace projetPharmacie
             this.edtProvincePharmacie.Name = "edtProvincePharmacie";
             this.edtProvincePharmacie.Size = new System.Drawing.Size(100, 20);
             this.edtProvincePharmacie.TabIndex = 10;
-            this.edtProvincePharmacie.Text = "Québec";
             // 
             // label6
             // 
@@ -216,7 +215,6 @@ namespace projetPharmacie
             this.edtNoPharmacie.Name = "edtNoPharmacie";
             this.edtNoPharmacie.Size = new System.Drawing.Size(100, 20);
             this.edtNoPharmacie.TabIndex = 16;
-            this.edtNoPharmacie.Text = "1345";
             // 
             // label10
             // 
@@ -233,7 +231,6 @@ namespace projetPharmacie
             this.edtCourrielPharmacie.Name = "edtCourrielPharmacie";
             this.edtCourrielPharmacie.Size = new System.Drawing.Size(157, 20);
             this.edtCourrielPharmacie.TabIndex = 14;
-            this.edtCourrielPharmacie.Text = "experienceclient@familiprix.com";
             // 
             // label11
             // 
@@ -250,7 +247,6 @@ namespace projetPharmacie
             this.edtTelephonePharmacie.Name = "edtTelephonePharmacie";
             this.edtTelephonePharmacie.Size = new System.Drawing.Size(100, 20);
             this.edtTelephonePharmacie.TabIndex = 12;
-            this.edtTelephonePharmacie.Text = "418-862-2176";
             // 
             // dtpDateImplantationPharmacie
             // 
@@ -317,6 +313,26 @@ namespace projetPharmacie
             this.àProposToolStripMenuItem1.Text = "À propos";
             this.àProposToolStripMenuItem1.Click += new System.EventHandler(this.àProposToolStripMenuItem1_Click);
             // 
+            // btnModifierPharmacie
+            // 
+            this.btnModifierPharmacie.Location = new System.Drawing.Point(110, 288);
+            this.btnModifierPharmacie.Name = "btnModifierPharmacie";
+            this.btnModifierPharmacie.Size = new System.Drawing.Size(75, 28);
+            this.btnModifierPharmacie.TabIndex = 2;
+            this.btnModifierPharmacie.Text = "Modifier";
+            this.btnModifierPharmacie.UseVisualStyleBackColor = true;
+            this.btnModifierPharmacie.Click += new System.EventHandler(this.btnModifierPharmacie_Click);
+            // 
+            // btnSupprimerPharmacie
+            // 
+            this.btnSupprimerPharmacie.Location = new System.Drawing.Point(205, 288);
+            this.btnSupprimerPharmacie.Name = "btnSupprimerPharmacie";
+            this.btnSupprimerPharmacie.Size = new System.Drawing.Size(75, 28);
+            this.btnSupprimerPharmacie.TabIndex = 3;
+            this.btnSupprimerPharmacie.Text = "Supprimer";
+            this.btnSupprimerPharmacie.UseVisualStyleBackColor = true;
+            this.btnSupprimerPharmacie.Click += new System.EventHandler(this.btnSupprimerPharmacie_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,6 +382,8 @@ namespace projetPharmacie
         private System.Windows.Forms.ToolStripMenuItem quitterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem àProposToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem àProposToolStripMenuItem1;
+        private System.Windows.Forms.Button btnSupprimerPharmacie;
+        private System.Windows.Forms.Button btnModifierPharmacie;
     }
 }
 
