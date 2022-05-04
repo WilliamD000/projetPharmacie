@@ -64,8 +64,11 @@ namespace projetPharmacie
             {
                 MessageBox.Show("La pharmacie n'existe pas");
             }
-            
+
         }
+        /// <summary>
+        /// Permet de gérer l'ouverture du fichier Xml, ou en crée un nouveau s'il n'existe pas
+        /// </summary>
         public void OuvrirFichier()
         {
             try
