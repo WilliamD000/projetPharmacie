@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace projetPharmacie
@@ -15,6 +8,21 @@ namespace projetPharmacie
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void btnCreerPharmacie_Click(object sender, EventArgs e)
+        {
+            Pharmacie unePharmacie = new Pharmacie();
+            unePharmacie.NoPharmacie = int.Parse(edtNoPharmacie.Text);
+            unePharmacie.NomPharmacie = edtNomPharmacie.Text;
+            unePharmacie.AdressePharmacie = edtAdressePharmacie.Text;
+            unePharmacie.VillePharmacie = edtVillePharmacie.Text;
+            unePharmacie.ProvincePharmacie = edtProvincePharmacie.Text;
+            unePharmacie.CodePostalPharmacie = edtProvincePharmacie.Text;
+            unePharmacie.TelephonePharmacie = edtTelephonePharmacie.Text;
+            unePharmacie.CourrielPharmacie = edtCourrielPharmacie.Text;
+            unePharmacie.AnneeDImplantationPharmacie = dtpDateImplantationPharmacie.Value;
+            btnCreerPharmacie.Enabled = false;
         }
     }
 }

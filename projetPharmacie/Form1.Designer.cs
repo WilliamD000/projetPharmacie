@@ -43,20 +43,20 @@ namespace projetPharmacie
             this.edtProvincePharmacie = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
-            this.edtAnneeDImplantation = new System.Windows.Forms.TextBox();
             this.label034 = new System.Windows.Forms.Label();
             this.edtNoPharmacie = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.edtCourrielPharmacie = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.edtTelephonePharmacie = new System.Windows.Forms.TextBox();
+            this.dtpDateImplantationPharmacie = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.dtpDateImplantationPharmacie);
             this.panel1.Controls.Add(this.label);
-            this.panel1.Controls.Add(this.edtAnneeDImplantation);
             this.panel1.Controls.Add(this.label034);
             this.panel1.Controls.Add(this.edtNoPharmacie);
             this.panel1.Controls.Add(this.label10);
@@ -77,7 +77,7 @@ namespace projetPharmacie
             this.panel1.Controls.Add(this.edtNomPharmacie);
             this.panel1.Location = new System.Drawing.Point(23, 55);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(276, 332);
+            this.panel1.Size = new System.Drawing.Size(319, 328);
             this.panel1.TabIndex = 0;
             // 
             // btnCreerPharmacie
@@ -88,6 +88,7 @@ namespace projetPharmacie
             this.btnCreerPharmacie.TabIndex = 1;
             this.btnCreerPharmacie.Text = "Créer";
             this.btnCreerPharmacie.UseVisualStyleBackColor = true;
+            this.btnCreerPharmacie.Click += new System.EventHandler(this.btnCreerPharmacie_Click);
             // 
             // edtNomPharmacie
             // 
@@ -160,7 +161,7 @@ namespace projetPharmacie
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 230);
+            this.label5.Location = new System.Drawing.Point(143, 182);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 11;
@@ -168,7 +169,7 @@ namespace projetPharmacie
             // 
             // edtProvincePharmacie
             // 
-            this.edtProvincePharmacie.Location = new System.Drawing.Point(15, 249);
+            this.edtProvincePharmacie.Location = new System.Drawing.Point(143, 201);
             this.edtProvincePharmacie.Name = "edtProvincePharmacie";
             this.edtProvincePharmacie.Size = new System.Drawing.Size(100, 20);
             this.edtProvincePharmacie.TabIndex = 10;
@@ -186,19 +187,11 @@ namespace projetPharmacie
             // label
             // 
             this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(143, 182);
+            this.label.Location = new System.Drawing.Point(77, 234);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(108, 13);
             this.label.TabIndex = 19;
             this.label.Text = "Annee D\'Implantation";
-            // 
-            // edtAnneeDImplantation
-            // 
-            this.edtAnneeDImplantation.Location = new System.Drawing.Point(143, 201);
-            this.edtAnneeDImplantation.Name = "edtAnneeDImplantation";
-            this.edtAnneeDImplantation.Size = new System.Drawing.Size(100, 20);
-            this.edtAnneeDImplantation.TabIndex = 18;
-            this.edtAnneeDImplantation.Text = "1977";
             // 
             // label034
             // 
@@ -215,6 +208,7 @@ namespace projetPharmacie
             this.edtNoPharmacie.Name = "edtNoPharmacie";
             this.edtNoPharmacie.Size = new System.Drawing.Size(100, 20);
             this.edtNoPharmacie.TabIndex = 16;
+            this.edtNoPharmacie.Text = "1345";
             // 
             // label10
             // 
@@ -250,11 +244,19 @@ namespace projetPharmacie
             this.edtTelephonePharmacie.TabIndex = 12;
             this.edtTelephonePharmacie.Text = "418-862-2176";
             // 
+            // dtpDateImplantationPharmacie
+            // 
+            this.dtpDateImplantationPharmacie.Location = new System.Drawing.Point(43, 250);
+            this.dtpDateImplantationPharmacie.Name = "dtpDateImplantationPharmacie";
+            this.dtpDateImplantationPharmacie.Size = new System.Drawing.Size(200, 20);
+            this.dtpDateImplantationPharmacie.TabIndex = 20;
+            this.dtpDateImplantationPharmacie.Value = new System.DateTime(1977, 1, 1, 0, 0, 0, 0);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1215, 598);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Programme pharmacie";
@@ -268,7 +270,6 @@ namespace projetPharmacie
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label;
-        private System.Windows.Forms.TextBox edtAnneeDImplantation;
         private System.Windows.Forms.Label label034;
         private System.Windows.Forms.TextBox edtNoPharmacie;
         private System.Windows.Forms.Label label10;
@@ -287,6 +288,7 @@ namespace projetPharmacie
         private System.Windows.Forms.TextBox edtAdressePharmacie;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox edtNomPharmacie;
+        private System.Windows.Forms.DateTimePicker dtpDateImplantationPharmacie;
     }
 }
 
