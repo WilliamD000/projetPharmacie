@@ -33,6 +33,8 @@ namespace projetPharmacie
             unePharmacie.CourrielPharmacie = edtCourrielPharmacie.Text;
             unePharmacie.AnneeDImplantationPharmacie = dtpDateImplantationPharmacie.Value;
             btnCreerPharmacie.Enabled = false;
+            btnModifierPharmacie.Enabled = true;
+            btnSupprimerPharmacie.Enabled = true;
         }
 
         private void enregistrerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -62,7 +64,7 @@ namespace projetPharmacie
             }
             else
             {
-                MessageBox.Show("La pharmacie n'existe pas");
+                MessageBox.Show("Vous n'avez pas crée de pharmacie");
             }
 
         }
@@ -91,11 +93,13 @@ namespace projetPharmacie
                     edtTelephonePharmacie.Text = unePharmacie.TelephonePharmacie;
                     edtCourrielPharmacie.Text = unePharmacie.CourrielPharmacie;
                     dtpDateImplantationPharmacie.Value = unePharmacie.AnneeDImplantationPharmacie;
+                    btnModifierPharmacie.Enabled = true;
+                    btnSupprimerPharmacie.Enabled = true;
                 }
                 else
                 {
                     File.WriteAllText("Pharmacie.Xml", "");
-                    MessageBox.Show("Le fichier 'Cegep.xml' a été crée, n'oubliez pas d'enregistrer souvent!");
+                    MessageBox.Show("Le fichier 'Pharmacie.Xml' a été crée, n'oubliez pas d'enregistrer souvent!");
                     edtNoPharmacie.Text = "1235";
                     edtNomPharmacie.Text = "Familiprix";
                     edtAdressePharmacie.Text = "200 rue Témiscouata";
@@ -108,7 +112,15 @@ namespace projetPharmacie
             }
             catch (Exception)
             {
-                MessageBox.Show("Classe cégep non détecté, veuillez créer un cégep et enregistrer.");
+                MessageBox.Show("Classe Pharmacie non détecté, veuillez créer une pharmacie et enregistrer.");
+                edtNoPharmacie.Text = "1235";
+                edtNomPharmacie.Text = "Familiprix";
+                edtAdressePharmacie.Text = "200 rue Témiscouata";
+                edtVillePharmacie.Text = "Rivière-du-Loup";
+                edtProvincePharmacie.Text = "Québec";
+                edtCodePostalPharmacie.Text = "G5R2Y5";
+                edtTelephonePharmacie.Text = "418-862-2176";
+                edtCourrielPharmacie.Text = "experienceclient@familiprix.com";
             }
         }
 
@@ -129,6 +141,8 @@ namespace projetPharmacie
         {
             unePharmacie = null;
             btnCreerPharmacie.Enabled = true;
+            btnModifierPharmacie.Enabled = false;
+            btnSupprimerPharmacie.Enabled = false;
         }
     }
 }
