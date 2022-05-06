@@ -7,7 +7,6 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 
 namespace projetPharmacie
@@ -17,6 +16,8 @@ namespace projetPharmacie
         XmlSerializer serializer = new XmlSerializer(typeof(Pharmacie));
         Pharmacie unePharmacie;
         Employe unEmploye;
+        int index = 0;
+        int compteurEmploye = 0;
         public Form1()
         {
             InitializeComponent();
@@ -149,41 +150,90 @@ namespace projetPharmacie
 
         private void btnCreerEmploye_Click(object sender, EventArgs e)
         {
-            unEmploye = new Employe();
-            unEmploye.Prenom = edtPrenomEmploye.Text;
-            unEmploye.Nom = edtNomEmploye.Text;
-            unEmploye.Adresse = edtAdresseEmploye.Text;
-            unEmploye.Ville = edtVilleEmploye.Text;
-            unEmploye.CodePostal = edtCodePostalEmploye.Text;
-            unEmploye.Province = edtProvinceEmploye.Text;
-            unEmploye.Telephone = edtTelephoneEmploye.Text;
-            unEmploye.Courriel = edtCourrielEmploye.Text;
-            unEmploye.Nas = int.Parse(edtNas.Text);
-            unEmploye.NumeroEmploye = int.Parse(edtNumeroEmploye.Text);
-            unEmploye.Actif = cbxActif.Checked;
-            unEmploye.Poste = edtPoste.Text;
-            unEmploye.DateEmbauche = dtpDateEmbauche.Value;
-            btnCreerEmploye.Enabled = false;
-            btnModifierEmploye.Enabled = true;
-            btnSupprimerEmploye.Enabled = true;
+            try
+            {
+                unEmploye = new Employe();
+                unEmploye.Prenom = edtPrenomEmploye.Text;
+                unEmploye.Nom = edtNomEmploye.Text;
+                unEmploye.Adresse = edtAdresseEmploye.Text;
+                unEmploye.Ville = edtVilleEmploye.Text;
+                unEmploye.CodePostal = edtCodePostalEmploye.Text;
+                unEmploye.Province = edtProvinceEmploye.Text;
+                unEmploye.Telephone = edtTelephoneEmploye.Text;
+                unEmploye.Courriel = edtCourrielEmploye.Text;
+                unEmploye.Nas = int.Parse(edtNas.Text);
+                unEmploye.NumeroEmploye = int.Parse(edtNumeroEmploye.Text);
+                unEmploye.Actif = cbxActif.Checked;
+                unEmploye.Poste = edtPoste.Text;
+                unEmploye.DateEmbauche = dtpDateEmbauche.Value;
+                unePharmacie.AjouterEmploye(unEmploye);
+                btnCreerEmploye.Enabled = false;
+                btnModifierEmploye.Enabled = true;
+                btnSupprimerEmploye.Enabled = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erreur d'entrée, réessayer");
+            }
+
         }
 
         private void btnModifierEmploye_Click(object sender, EventArgs e)
         {
-            edtPrenomEmploye.Text = unEmploye.Prenom;
-            edtNomEmploye.Text = unEmploye.Nom;
-            edtAdresseEmploye.Text = unEmploye.Adresse;
-            edtVilleEmploye.Text = unEmploye.Ville;
-            edtCodePostalEmploye.Text = unEmploye.CodePostal;
-            edtProvinceEmploye.Text = unEmploye.Province;
-            edtTelephoneEmploye.Text = unEmploye.Telephone;
-            edtCourrielEmploye.Text = unEmploye.Courriel;
-            /*edtNas.Text = int.Parse(unEmploye.Nas);
-            edtNumeroEmploye.Text = unEmploye.NumeroEmploye;*/
-            cbxActif.Checked = unEmploye.Actif;
-            edtPoste.Text = unEmploye.Poste;
-            dtpDateEmbauche.Value = unEmploye.DateEmbauche;
-            
+            if (unePharmacie.ObtenirNombreEmploye() == 0)
+            {
+                MessageBox.Show("Il n'y a aucun employé dans la liste");
+            }
+            else
+            {
+                if (lbxEmploye.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Veuillez sélectionner un employé");
+                }
+                else
+                {
+                    index = lbxEmploye.SelectedIndex + 1;
+                    unePharmacie.ObtenirListeEmploye()[index].Prenom = edtPrenomEmploye.Text;
+                    unePharmacie.ObtenirListeEmploye()[index].Nom = edtNomEmploye.Text;
+                    unePharmacie.ObtenirListeEmploye()[index].Adresse = edtAdresseEmploye.Text;
+                    unePharmacie.ObtenirListeEmploye()[index].Ville = edtVilleEmploye.Text;
+                    unePharmacie.ObtenirListeEmploye()[index].CodePostal = edtCodePostalEmploye.Text;
+                    unePharmacie.ObtenirListeEmploye()[index].Province = edtProvinceEmploye.Text;
+                    unePharmacie.ObtenirListeEmploye()[index].Telephone = edtTelephoneEmploye.Text;
+                    unePharmacie.ObtenirListeEmploye()[index].Courriel = edtCourrielEmploye.Text;
+                    unePharmacie.ObtenirListeEmploye()[index].Nas = int.Parse(edtNas.Text);
+                    unePharmacie.ObtenirListeEmploye()[index].NumeroEmploye = int.Parse(edtNumeroEmploye.Text);
+                    unePharmacie.ObtenirListeEmploye()[index].Actif = cbxActif.Checked;
+                    unePharmacie.ObtenirListeEmploye()[index].Poste = edtPoste.Text;
+                    unePharmacie.ObtenirListeEmploye()[index].DateEmbauche = dtpDateEmbauche.Value;
+                    InitialiserListeEmploye(compteurEmploye);
+                }
+            }
+
+
+        }
+        /// <summary>
+        /// Évenement se déclenchant au click du bouton vider liste
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (unePharmacie.ViderListeEmploye() == false)
+            {
+                MessageBox.Show("Il n'y a aucun employé dans la liste");
+            }
+            unePharmacie.ViderListeEmploye();
+        }
+        public int InitialiserListeEmploye(int compteurEmploye)
+        {
+            lbxEmploye.Items.Clear();
+            foreach (Employe employe in unePharmacie.ObtenirListeEmploye())
+            {
+                compteurEmploye++;
+                lbxEmploye.Items.Add(compteurEmploye.ToString() + "- " + employe.ToString());
+            }
+            return (compteurEmploye);
         }
     }
 }

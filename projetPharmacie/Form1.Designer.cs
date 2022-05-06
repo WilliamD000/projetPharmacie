@@ -89,6 +89,15 @@ namespace projetPharmacie
             this.cbxActif = new System.Windows.Forms.CheckBox();
             this.label19 = new System.Windows.Forms.Label();
             this.edtPrenomEmploye = new System.Windows.Forms.TextBox();
+            this.btnViderListe = new System.Windows.Forms.Button();
+            this.lbxEmploye = new System.Windows.Forms.ListBox();
+            this.btnPremierEmploye = new System.Windows.Forms.Button();
+            this.btnDernier = new System.Windows.Forms.Button();
+            this.btnSuivant = new System.Windows.Forms.Button();
+            this.btnPrecedent = new System.Windows.Forms.Button();
+            this.btnRetirer = new System.Windows.Forms.Button();
+            this.edtEmployeARetirer = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.panelPharmacie.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -368,6 +377,15 @@ namespace projetPharmacie
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label22);
+            this.panel1.Controls.Add(this.edtEmployeARetirer);
+            this.panel1.Controls.Add(this.btnRetirer);
+            this.panel1.Controls.Add(this.btnPrecedent);
+            this.panel1.Controls.Add(this.btnSuivant);
+            this.panel1.Controls.Add(this.btnDernier);
+            this.panel1.Controls.Add(this.btnPremierEmploye);
+            this.panel1.Controls.Add(this.lbxEmploye);
+            this.panel1.Controls.Add(this.btnViderListe);
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.edtPrenomEmploye);
             this.panel1.Controls.Add(this.cbxActif);
@@ -399,13 +417,13 @@ namespace projetPharmacie
             this.panel1.Controls.Add(this.edtNomEmploye);
             this.panel1.Location = new System.Drawing.Point(413, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(469, 359);
+            this.panel1.Size = new System.Drawing.Size(580, 359);
             this.panel1.TabIndex = 2;
             // 
             // btnSupprimerEmploye
             // 
             this.btnSupprimerEmploye.Enabled = false;
-            this.btnSupprimerEmploye.Location = new System.Drawing.Point(205, 288);
+            this.btnSupprimerEmploye.Location = new System.Drawing.Point(101, 315);
             this.btnSupprimerEmploye.Name = "btnSupprimerEmploye";
             this.btnSupprimerEmploye.Size = new System.Drawing.Size(75, 28);
             this.btnSupprimerEmploye.TabIndex = 3;
@@ -414,7 +432,7 @@ namespace projetPharmacie
             // 
             // dtpDateEmbauche
             // 
-            this.dtpDateEmbauche.Location = new System.Drawing.Point(43, 250);
+            this.dtpDateEmbauche.Location = new System.Drawing.Point(14, 240);
             this.dtpDateEmbauche.Name = "dtpDateEmbauche";
             this.dtpDateEmbauche.Size = new System.Drawing.Size(200, 20);
             this.dtpDateEmbauche.TabIndex = 20;
@@ -423,7 +441,7 @@ namespace projetPharmacie
             // btnModifierEmploye
             // 
             this.btnModifierEmploye.Enabled = false;
-            this.btnModifierEmploye.Location = new System.Drawing.Point(110, 288);
+            this.btnModifierEmploye.Location = new System.Drawing.Point(101, 266);
             this.btnModifierEmploye.Name = "btnModifierEmploye";
             this.btnModifierEmploye.Size = new System.Drawing.Size(75, 28);
             this.btnModifierEmploye.TabIndex = 2;
@@ -434,7 +452,7 @@ namespace projetPharmacie
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(77, 234);
+            this.label7.Location = new System.Drawing.Point(48, 224);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(94, 13);
             this.label7.TabIndex = 19;
@@ -556,7 +574,7 @@ namespace projetPharmacie
             // 
             // btnCreerEmploye
             // 
-            this.btnCreerEmploye.Location = new System.Drawing.Point(15, 288);
+            this.btnCreerEmploye.Location = new System.Drawing.Point(6, 266);
             this.btnCreerEmploye.Name = "btnCreerEmploye";
             this.btnCreerEmploye.Size = new System.Drawing.Size(75, 28);
             this.btnCreerEmploye.TabIndex = 1;
@@ -645,6 +663,85 @@ namespace projetPharmacie
             this.edtPrenomEmploye.Size = new System.Drawing.Size(100, 20);
             this.edtPrenomEmploye.TabIndex = 30;
             // 
+            // btnViderListe
+            // 
+            this.btnViderListe.Location = new System.Drawing.Point(6, 315);
+            this.btnViderListe.Name = "btnViderListe";
+            this.btnViderListe.Size = new System.Drawing.Size(75, 28);
+            this.btnViderListe.TabIndex = 32;
+            this.btnViderListe.Text = "Vider liste";
+            this.btnViderListe.UseVisualStyleBackColor = true;
+            this.btnViderListe.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lbxEmploye
+            // 
+            this.lbxEmploye.FormattingEnabled = true;
+            this.lbxEmploye.Location = new System.Drawing.Point(412, 30);
+            this.lbxEmploye.Name = "lbxEmploye";
+            this.lbxEmploye.Size = new System.Drawing.Size(154, 264);
+            this.lbxEmploye.TabIndex = 33;
+            // 
+            // btnPremierEmploye
+            // 
+            this.btnPremierEmploye.Location = new System.Drawing.Point(244, 214);
+            this.btnPremierEmploye.Name = "btnPremierEmploye";
+            this.btnPremierEmploye.Size = new System.Drawing.Size(80, 36);
+            this.btnPremierEmploye.TabIndex = 34;
+            this.btnPremierEmploye.Text = "Premier";
+            this.btnPremierEmploye.UseVisualStyleBackColor = true;
+            // 
+            // btnDernier
+            // 
+            this.btnDernier.Location = new System.Drawing.Point(326, 256);
+            this.btnDernier.Name = "btnDernier";
+            this.btnDernier.Size = new System.Drawing.Size(80, 36);
+            this.btnDernier.TabIndex = 35;
+            this.btnDernier.Text = "Dernier";
+            this.btnDernier.UseVisualStyleBackColor = true;
+            // 
+            // btnSuivant
+            // 
+            this.btnSuivant.Location = new System.Drawing.Point(244, 256);
+            this.btnSuivant.Name = "btnSuivant";
+            this.btnSuivant.Size = new System.Drawing.Size(80, 36);
+            this.btnSuivant.TabIndex = 36;
+            this.btnSuivant.Text = "Suivant";
+            this.btnSuivant.UseVisualStyleBackColor = true;
+            // 
+            // btnPrecedent
+            // 
+            this.btnPrecedent.Location = new System.Drawing.Point(326, 214);
+            this.btnPrecedent.Name = "btnPrecedent";
+            this.btnPrecedent.Size = new System.Drawing.Size(80, 36);
+            this.btnPrecedent.TabIndex = 37;
+            this.btnPrecedent.Text = "Précédent";
+            this.btnPrecedent.UseVisualStyleBackColor = true;
+            // 
+            // btnRetirer
+            // 
+            this.btnRetirer.Location = new System.Drawing.Point(433, 315);
+            this.btnRetirer.Name = "btnRetirer";
+            this.btnRetirer.Size = new System.Drawing.Size(75, 23);
+            this.btnRetirer.TabIndex = 38;
+            this.btnRetirer.Text = "Retirer";
+            this.btnRetirer.UseVisualStyleBackColor = true;
+            // 
+            // edtEmployeARetirer
+            // 
+            this.edtEmployeARetirer.Location = new System.Drawing.Point(326, 315);
+            this.edtEmployeARetirer.Name = "edtEmployeARetirer";
+            this.edtEmployeARetirer.Size = new System.Drawing.Size(100, 20);
+            this.edtEmployeARetirer.TabIndex = 39;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(326, 296);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(85, 13);
+            this.label22.TabIndex = 40;
+            this.label22.Text = "Employé à retirer";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -729,6 +826,15 @@ namespace projetPharmacie
         private System.Windows.Forms.CheckBox cbxActif;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox edtPrenomEmploye;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox edtEmployeARetirer;
+        private System.Windows.Forms.Button btnRetirer;
+        private System.Windows.Forms.Button btnPrecedent;
+        private System.Windows.Forms.Button btnSuivant;
+        private System.Windows.Forms.Button btnDernier;
+        private System.Windows.Forms.Button btnPremierEmploye;
+        private System.Windows.Forms.ListBox lbxEmploye;
+        private System.Windows.Forms.Button btnViderListe;
     }
 }
 

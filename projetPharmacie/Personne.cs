@@ -1,4 +1,9 @@
-﻿using System;
+﻿/* Objet   : Pharmacie
+ * Date    : 2022/05/04
+ * Version : 1.0
+ * Auteur  : William Desjardins
+ * But     : Objet qui représente une personne*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
