@@ -98,6 +98,7 @@ namespace projetPharmacie
                     dtpDateImplantationPharmacie.Value = unePharmacie.AnneeDImplantationPharmacie;
                     btnModifierPharmacie.Enabled = true;
                     btnSupprimerPharmacie.Enabled = true;
+                    InitialiserListeEmploye(compteurEmploye);
                 }
                 else
                 {
@@ -170,6 +171,7 @@ namespace projetPharmacie
                 btnCreerEmploye.Enabled = false;
                 btnModifierEmploye.Enabled = true;
                 btnSupprimerEmploye.Enabled = true;
+                InitialiserListeEmploye(compteurEmploye);
             }
             catch (Exception)
             {
@@ -224,6 +226,7 @@ namespace projetPharmacie
                 MessageBox.Show("Il n'y a aucun employé dans la liste");
             }
             unePharmacie.ViderListeEmploye();
+            InitialiserListeEmploye(compteurEmploye);
         }
         /// <summary>
         /// Méthode permettant de érafficher le listbox

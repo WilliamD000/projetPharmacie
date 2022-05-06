@@ -646,7 +646,7 @@ namespace projetPharmacie
             this.edtNas.Name = "edtNas";
             this.edtNas.Size = new System.Drawing.Size(100, 20);
             this.edtNas.TabIndex = 23;
-            this.edtNas.Text = "123456789010";
+            this.edtNas.Text = "12345";
             // 
             // cbxActif
             // 
