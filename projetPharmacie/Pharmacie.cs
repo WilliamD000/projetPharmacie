@@ -4,6 +4,7 @@
  * Auteur  : William Desjardins
  * But     : Objet qui représente la pharmacie*/
 using System;
+using System.Collections.Generic;
 
 namespace projetPharmacie
 {
@@ -72,6 +73,7 @@ namespace projetPharmacie
             get { return anneeDImplantationPharmacie; }
             set { anneeDImplantationPharmacie = value; }
         }
+        public List<Employe> listeEmploye = new List<Employe>();
         /// <summary>
         /// Constructeur non paramètré
         /// </summary>
@@ -113,6 +115,67 @@ namespace projetPharmacie
             courrielPharmacie = unCourrielPharmacie;
             anneeDImplantationPharmacie = uneAnneeDImplantationPharmacie;
 
+        }
+        public Employe[] ObtenirListeEmploye()
+        {
+            return (listeEmploye.ToArray());
+        }
+        public Employe ObtenirEmploye(Employe unEmploye)
+        {
+            foreach (Employe employe in listeEmploye)
+            {
+                if (employe.Equals(unEmploye))
+                {
+                    return(employe);
+                }
+            }
+            return null;
+        }
+        public bool SiEmployePresent(Employe unEmploye)
+        {
+            foreach (Employe employe in listeEmploye)
+            {
+                if (employe.Equals(unEmploye))
+                {
+                    return (true);
+                }
+            }
+            return false;
+        }
+        public bool AjouterEmploye(Employe unEmploye)
+        {
+            if (SiEmployePresent(unEmploye))
+            {
+                return false;
+            }
+            listeEmploye.Add(unEmploye);
+            return SiEmployePresent(unEmploye);
+        }
+        public bool EnleverEmploye(Employe unEmploye)
+        {
+            if (!SiEmployePresent(unEmploye))
+            {
+                return false;
+            }
+            listeEmploye.Remove(unEmploye);
+            return !SiEmployePresent(unEmploye);
+        }
+        public int ObtenirNombreEmploye()
+        {
+            return listeEmploye.Count;
+        }
+        public bool SiAucunProgramme()
+        {
+            return (ObtenirNombreEmploye() == 0);
+        }
+        public bool ViderListeEmploye()
+        {
+            if (ObtenirNombreEmploye() == 0)
+            {
+                return false;
+            }
+            listeEmploye.Clear();
+            return SiAucunProgramme();
         }
         /// <summary>
         /// Remplace la méthode "ToString" de l'objet

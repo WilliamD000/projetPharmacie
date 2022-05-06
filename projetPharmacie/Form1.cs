@@ -7,6 +7,8 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using System.Collections.Generic;
+
 
 namespace projetPharmacie
 {
@@ -14,12 +16,12 @@ namespace projetPharmacie
     {
         XmlSerializer serializer = new XmlSerializer(typeof(Pharmacie));
         Pharmacie unePharmacie;
+        Employe unEmploye;
         public Form1()
         {
             InitializeComponent();
             OuvrirFichier();
         }
-
         private void btnCreerPharmacie_Click(object sender, EventArgs e)
         {
             unePharmacie = new Pharmacie();
@@ -143,6 +145,45 @@ namespace projetPharmacie
             btnCreerPharmacie.Enabled = true;
             btnModifierPharmacie.Enabled = false;
             btnSupprimerPharmacie.Enabled = false;
+        }
+
+        private void btnCreerEmploye_Click(object sender, EventArgs e)
+        {
+            unEmploye = new Employe();
+            unEmploye.Prenom = edtPrenomEmploye.Text;
+            unEmploye.Nom = edtNomEmploye.Text;
+            unEmploye.Adresse = edtAdresseEmploye.Text;
+            unEmploye.Ville = edtVilleEmploye.Text;
+            unEmploye.CodePostal = edtCodePostalEmploye.Text;
+            unEmploye.Province = edtProvinceEmploye.Text;
+            unEmploye.Telephone = edtTelephoneEmploye.Text;
+            unEmploye.Courriel = edtCourrielEmploye.Text;
+            unEmploye.Nas = int.Parse(edtNas.Text);
+            unEmploye.NumeroEmploye = int.Parse(edtNumeroEmploye.Text);
+            unEmploye.Actif = cbxActif.Checked;
+            unEmploye.Poste = edtPoste.Text;
+            unEmploye.DateEmbauche = dtpDateEmbauche.Value;
+            btnCreerEmploye.Enabled = false;
+            btnModifierEmploye.Enabled = true;
+            btnSupprimerEmploye.Enabled = true;
+        }
+
+        private void btnModifierEmploye_Click(object sender, EventArgs e)
+        {
+            edtPrenomEmploye.Text = unEmploye.Prenom;
+            edtNomEmploye.Text = unEmploye.Nom;
+            edtAdresseEmploye.Text = unEmploye.Adresse;
+            edtVilleEmploye.Text = unEmploye.Ville;
+            edtCodePostalEmploye.Text = unEmploye.CodePostal;
+            edtProvinceEmploye.Text = unEmploye.Province;
+            edtTelephoneEmploye.Text = unEmploye.Telephone;
+            edtCourrielEmploye.Text = unEmploye.Courriel;
+            /*edtNas.Text = int.Parse(unEmploye.Nas);
+            edtNumeroEmploye.Text = unEmploye.NumeroEmploye;*/
+            cbxActif.Checked = unEmploye.Actif;
+            edtPoste.Text = unEmploye.Poste;
+            dtpDateEmbauche.Value = unEmploye.DateEmbauche;
+            
         }
     }
 }
