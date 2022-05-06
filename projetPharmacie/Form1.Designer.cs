@@ -429,6 +429,7 @@ namespace projetPharmacie
             this.btnSupprimerEmploye.TabIndex = 3;
             this.btnSupprimerEmploye.Text = "Supprimer";
             this.btnSupprimerEmploye.UseVisualStyleBackColor = true;
+            this.btnSupprimerEmploye.Click += new System.EventHandler(this.btnSupprimerEmploye_Click);
             // 
             // dtpDateEmbauche
             // 
@@ -436,7 +437,7 @@ namespace projetPharmacie
             this.dtpDateEmbauche.Name = "dtpDateEmbauche";
             this.dtpDateEmbauche.Size = new System.Drawing.Size(200, 20);
             this.dtpDateEmbauche.TabIndex = 20;
-            this.dtpDateEmbauche.Value = new System.DateTime(1977, 1, 1, 0, 0, 0, 0);
+            this.dtpDateEmbauche.Value = new System.DateTime(2018, 6, 11, 0, 0, 0, 0);
             // 
             // btnModifierEmploye
             // 
@@ -473,6 +474,7 @@ namespace projetPharmacie
             this.edtNumeroEmploye.Name = "edtNumeroEmploye";
             this.edtNumeroEmploye.Size = new System.Drawing.Size(100, 20);
             this.edtNumeroEmploye.TabIndex = 16;
+            this.edtNumeroEmploye.Text = "2341567";
             // 
             // label9
             // 
@@ -489,6 +491,7 @@ namespace projetPharmacie
             this.edtCourrielEmploye.Name = "edtCourrielEmploye";
             this.edtCourrielEmploye.Size = new System.Drawing.Size(157, 20);
             this.edtCourrielEmploye.TabIndex = 14;
+            this.edtCourrielEmploye.Text = "YvCo@gmail.com";
             // 
             // label12
             // 
@@ -505,6 +508,7 @@ namespace projetPharmacie
             this.edtTelephoneEmploye.Name = "edtTelephoneEmploye";
             this.edtTelephoneEmploye.Size = new System.Drawing.Size(100, 20);
             this.edtTelephoneEmploye.TabIndex = 12;
+            this.edtTelephoneEmploye.Text = "581-337-1234";
             // 
             // label13
             // 
@@ -530,6 +534,7 @@ namespace projetPharmacie
             this.edtProvinceEmploye.Name = "edtProvinceEmploye";
             this.edtProvinceEmploye.Size = new System.Drawing.Size(100, 20);
             this.edtProvinceEmploye.TabIndex = 10;
+            this.edtProvinceEmploye.Text = "Québec";
             // 
             // label15
             // 
@@ -546,6 +551,7 @@ namespace projetPharmacie
             this.edtCodePostalEmploye.Name = "edtCodePostalEmploye";
             this.edtCodePostalEmploye.Size = new System.Drawing.Size(100, 20);
             this.edtCodePostalEmploye.TabIndex = 8;
+            this.edtCodePostalEmploye.Text = "G5R9L0";
             // 
             // label16
             // 
@@ -562,6 +568,7 @@ namespace projetPharmacie
             this.edtVilleEmploye.Name = "edtVilleEmploye";
             this.edtVilleEmploye.Size = new System.Drawing.Size(100, 20);
             this.edtVilleEmploye.TabIndex = 6;
+            this.edtVilleEmploye.Text = "Rivière-du-Loup";
             // 
             // label17
             // 
@@ -588,6 +595,7 @@ namespace projetPharmacie
             this.edtAdresseEmploye.Name = "edtAdresseEmploye";
             this.edtAdresseEmploye.Size = new System.Drawing.Size(109, 20);
             this.edtAdresseEmploye.TabIndex = 4;
+            this.edtAdresseEmploye.Text = "12 Rue Lafontaine";
             // 
             // label18
             // 
@@ -604,6 +612,7 @@ namespace projetPharmacie
             this.edtNomEmploye.Name = "edtNomEmploye";
             this.edtNomEmploye.Size = new System.Drawing.Size(100, 20);
             this.edtNomEmploye.TabIndex = 2;
+            this.edtNomEmploye.Text = "Côté";
             // 
             // label20
             // 
@@ -620,6 +629,7 @@ namespace projetPharmacie
             this.edtPoste.Name = "edtPoste";
             this.edtPoste.Size = new System.Drawing.Size(100, 20);
             this.edtPoste.TabIndex = 25;
+            this.edtPoste.Text = "Stagiaire";
             // 
             // label21
             // 
@@ -636,6 +646,7 @@ namespace projetPharmacie
             this.edtNas.Name = "edtNas";
             this.edtNas.Size = new System.Drawing.Size(100, 20);
             this.edtNas.TabIndex = 23;
+            this.edtNas.Text = "123456789010";
             // 
             // cbxActif
             // 
@@ -662,6 +673,7 @@ namespace projetPharmacie
             this.edtPrenomEmploye.Name = "edtPrenomEmploye";
             this.edtPrenomEmploye.Size = new System.Drawing.Size(100, 20);
             this.edtPrenomEmploye.TabIndex = 30;
+            this.edtPrenomEmploye.Text = "Yvan";
             // 
             // btnViderListe
             // 

@@ -213,7 +213,7 @@ namespace projetPharmacie
 
         }
         /// <summary>
-        /// Évenement se déclenchant au click du bouton vider liste
+        /// Évenement se déclenchant au click du bouton Vider liste
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -225,6 +225,11 @@ namespace projetPharmacie
             }
             unePharmacie.ViderListeEmploye();
         }
+        /// <summary>
+        /// Méthode permettant de érafficher le listbox
+        /// </summary>
+        /// <param name="compteurEmploye">Compteur contenant le nombre d'employés</param>
+        /// <returns></returns>
         public int InitialiserListeEmploye(int compteurEmploye)
         {
             lbxEmploye.Items.Clear();
@@ -234,6 +239,12 @@ namespace projetPharmacie
                 lbxEmploye.Items.Add(compteurEmploye.ToString() + "- " + employe.ToString());
             }
             return (compteurEmploye);
+        }
+
+        private void btnSupprimerEmploye_Click(object sender, EventArgs e)
+        {
+            unePharmacie.EnleverEmploye(unEmploye);
+            InitialiserListeEmploye(compteurEmploye);
         }
     }
 }

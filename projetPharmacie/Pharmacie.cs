@@ -116,10 +116,19 @@ namespace projetPharmacie
             anneeDImplantationPharmacie = uneAnneeDImplantationPharmacie;
 
         }
+        /// <summary>
+        /// Méthode qui retourne la liste d'employés
+        /// </summary>
+        /// <returns>Liste d'employés</returns>
         public Employe[] ObtenirListeEmploye()
         {
             return (listeEmploye.ToArray());
         }
+        /// <summary>
+        /// Méthode qui retourne l'employe désiré
+        /// </summary>
+        /// <param name="unEmploye">L'employé</param>
+        /// <returns>L'employé désiré</returns>
         public Employe ObtenirEmploye(Employe unEmploye)
         {
             foreach (Employe employe in listeEmploye)
@@ -131,6 +140,11 @@ namespace projetPharmacie
             }
             return null;
         }
+        /// <summary>
+        /// Méthode qui vérifie si un employé est présent, tout en retournant un booléen
+        /// </summary>
+        /// <param name="unEmploye">L'employé à vérifier</param>
+        /// <returns>Valeur booléenne</returns>
         public bool SiEmployePresent(Employe unEmploye)
         {
             foreach (Employe employe in listeEmploye)
@@ -142,6 +156,11 @@ namespace projetPharmacie
             }
             return false;
         }
+        /// <summary>
+        /// Méthode qui ajoute un employé à la liste d'employés, après vérification
+        /// </summary>
+        /// <param name="unEmploye">L'employé à ajouter</param>
+        /// <returns>Valeur booléene</returns>
         public bool AjouterEmploye(Employe unEmploye)
         {
             if (SiEmployePresent(unEmploye))
@@ -151,6 +170,11 @@ namespace projetPharmacie
             listeEmploye.Add(unEmploye);
             return SiEmployePresent(unEmploye);
         }
+        /// <summary>
+        /// Méthode qui retire un employé de la liste
+        /// </summary>
+        /// <param name="unEmploye">L'employer à retirer</param>
+        /// <returns>Valeur booléene</returns>
         public bool EnleverEmploye(Employe unEmploye)
         {
             if (!SiEmployePresent(unEmploye))
@@ -160,14 +184,26 @@ namespace projetPharmacie
             listeEmploye.Remove(unEmploye);
             return !SiEmployePresent(unEmploye);
         }
+        /// <summary>
+        /// Méthode qui retourne le nombre d'employés dans la liste
+        /// </summary>
+        /// <returns>Nombre d'employés dans la liste</returns>
         public int ObtenirNombreEmploye()
         {
             return listeEmploye.Count;
         }
-        public bool SiAucunProgramme()
+        /// <summary>
+        /// Vérifie si la liste est vide
+        /// </summary>
+        /// <returns>Valeur booléene</returns>
+        public bool SiAucunEmploye()
         {
             return (ObtenirNombreEmploye() == 0);
         }
+        /// <summary>
+        /// permet de vider la liste, après vérification
+        /// </summary>
+        /// <returns>Valeur booléene</returns>
         public bool ViderListeEmploye()
         {
             if (ObtenirNombreEmploye() == 0)
@@ -175,7 +211,7 @@ namespace projetPharmacie
                 return false;
             }
             listeEmploye.Clear();
-            return SiAucunProgramme();
+            return SiAucunEmploye();
         }
         /// <summary>
         /// Remplace la méthode "ToString" de l'objet
