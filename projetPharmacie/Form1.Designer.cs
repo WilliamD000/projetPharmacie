@@ -128,9 +128,9 @@ namespace projetPharmacie
             this.panelPharmacie.Controls.Add(this.edtAdressePharmacie);
             this.panelPharmacie.Controls.Add(this.label1);
             this.panelPharmacie.Controls.Add(this.edtNomPharmacie);
-            this.panelPharmacie.Location = new System.Drawing.Point(23, 96);
+            this.panelPharmacie.Location = new System.Drawing.Point(12, 70);
             this.panelPharmacie.Name = "panelPharmacie";
-            this.panelPharmacie.Size = new System.Drawing.Size(319, 328);
+            this.panelPharmacie.Size = new System.Drawing.Size(319, 335);
             this.panelPharmacie.TabIndex = 0;
             this.panelPharmacie.Visible = false;
             // 
@@ -417,7 +417,7 @@ namespace projetPharmacie
             this.panelEmploye.Controls.Add(this.edtAdresseEmploye);
             this.panelEmploye.Controls.Add(this.label18);
             this.panelEmploye.Controls.Add(this.edtNomEmploye);
-            this.panelEmploye.Location = new System.Drawing.Point(417, 96);
+            this.panelEmploye.Location = new System.Drawing.Point(12, 54);
             this.panelEmploye.Name = "panelEmploye";
             this.panelEmploye.Size = new System.Drawing.Size(580, 359);
             this.panelEmploye.TabIndex = 2;
@@ -768,7 +768,7 @@ namespace projetPharmacie
             "Aucun",
             "Pharmacie",
             "Employe"});
-            this.comboBox1.Location = new System.Drawing.Point(66, 45);
+            this.comboBox1.Location = new System.Drawing.Point(12, 27);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 3;

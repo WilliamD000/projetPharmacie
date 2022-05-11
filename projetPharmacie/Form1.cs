@@ -341,6 +341,8 @@ namespace projetPharmacie
             {
                 panelPharmacie.Visible = false;
                 panelEmploye.Visible = false;
+                this.Width = 200;
+                this.Height = 100;
             }
             else
             {
@@ -348,6 +350,8 @@ namespace projetPharmacie
                 {
                     panelEmploye.Visible = false;
                     panelPharmacie.Visible = true;
+                    this.Width = 339;
+                    this.Height = 450;
                 }
                 else
                 {
@@ -355,6 +359,8 @@ namespace projetPharmacie
                     {
                         panelEmploye.Visible = true;
                         panelPharmacie.Visible = false;
+                        this.Width = 650;
+                        this.Height = 500;
                     }
                 }
             }
