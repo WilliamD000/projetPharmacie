@@ -222,7 +222,10 @@ namespace projetPharmacie
         {
             return listePrescription.ToArray();
         }
-
+        public void RetirerPrescription(Prescription unePrescription)
+        {
+            listePrescription.Remove(unePrescription);
+        }
         /// <summary>
         /// Remplace la méthode "ToString" de l'objet
         /// </summary>

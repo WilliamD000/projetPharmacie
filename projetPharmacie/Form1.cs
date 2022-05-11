@@ -490,6 +490,12 @@ namespace projetPharmacie
             unePharmacie.ObtenirListePrescription()[index].NumeroPrescription = int.Parse(edtNumeroPrescription.Text);
             InitialiserListePrescriptions(compteurPrescription);
         }
+
+        private void btnSupprimerPrescription_Click(object sender, EventArgs e)
+        {
+
+        }
+
         public int InitialiserListePrescriptions(int compteurPrescription)
         {
             lbxPrescriptions.Items.Clear();

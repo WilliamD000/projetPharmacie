@@ -937,6 +937,7 @@ namespace projetPharmacie
             this.btnSupprimerPrescription.TabIndex = 43;
             this.btnSupprimerPrescription.Text = "Supprimer";
             this.btnSupprimerPrescription.UseVisualStyleBackColor = true;
+            this.btnSupprimerPrescription.Click += new System.EventHandler(this.btnSupprimerPrescription_Click);
             // 
             // btnModifierPrescription
             // 
