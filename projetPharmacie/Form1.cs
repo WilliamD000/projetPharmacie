@@ -23,6 +23,11 @@ namespace projetPharmacie
             InitializeComponent();
             OuvrirApplication();
         }
+        /// <summary>
+        /// Permet de créer la pharmacie
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCreerPharmacie_Click(object sender, EventArgs e)
         {
             unePharmacie = new Pharmacie();
@@ -39,7 +44,11 @@ namespace projetPharmacie
             btnModifierPharmacie.Enabled = true;
             btnSupprimerPharmacie.Enabled = true;
         }
-
+        /// <summary>
+        /// Permet d'enregistrer les informations de la pharmacie dans le fichier XML
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void enregistrerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (var writer = new StreamWriter("Pharmacie.Xml"))
@@ -48,17 +57,29 @@ namespace projetPharmacie
             }
             MessageBox.Show("Programme enregistré.");
         }
-
+        /// <summary>
+        /// Permet d'extraire les informations du fichier XML
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ouvrirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OuvrirFichier();
         }
-
+        /// <summary>
+        /// Permet de quitter l'application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
+        /// <summary>
+        /// Permet d'afficher les informations de la pharmacie
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void àProposToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (unePharmacie != null)
@@ -127,7 +148,11 @@ namespace projetPharmacie
                 edtCourrielPharmacie.Text = "experienceclient@familiprix.com";
             }
         }
-
+        /// <summary>
+        /// Permet de modifier la pharmacie
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModifierPharmacie_Click(object sender, EventArgs e)
         {
             unePharmacie.NoPharmacie = int.Parse(edtNoPharmacie.Text);
@@ -140,15 +165,24 @@ namespace projetPharmacie
             unePharmacie.CourrielPharmacie = edtCourrielPharmacie.Text;
             unePharmacie.AnneeDImplantationPharmacie = dtpDateImplantationPharmacie.Value;
         }
-
+        /// <summary>
+        /// Permet de supprimer la pharmacie
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSupprimerPharmacie_Click(object sender, EventArgs e)
         {
             unePharmacie = null;
             btnCreerPharmacie.Enabled = true;
             btnModifierPharmacie.Enabled = false;
             btnSupprimerPharmacie.Enabled = false;
+            InitialiserListeEmploye(compteurEmploye);
         }
-
+        /// <summary>
+        /// Permet de créer l'employé, avec validation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCreerEmploye_Click(object sender, EventArgs e)
         {
             try
@@ -185,7 +219,11 @@ namespace projetPharmacie
             }
 
         }
-
+        /// <summary>
+        /// Permet de modifier l'employé avec la saisie des champs d'édition
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModifierEmploye_Click(object sender, EventArgs e)
         {
             if (unePharmacie.ObtenirNombreEmploye() == 0)
@@ -250,26 +288,54 @@ namespace projetPharmacie
             }
             return (compteurEmploye);
         }
-
+        /// <summary>
+        /// Permet de supprimer l'employé sélectionné
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSupprimerEmploye_Click(object sender, EventArgs e)
         {
-            unePharmacie.EnleverEmploye(unePharmacie.ObtenirListeEmploye()[lbxEmploye.SelectedIndex-1]);
-            InitialiserListeEmploye(compteurEmploye);
-        }
+            try
+            {
+                unePharmacie.EnleverEmploye(unePharmacie.ObtenirListeEmploye()[lbxEmploye.SelectedIndex]);
+                InitialiserListeEmploye(compteurEmploye);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erreur dans la sélection.");
+            }
 
+        }
+        /// <summary>
+        /// Permet de retirer l'employé avec le nombre mentionné
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRetirer_Click(object sender, EventArgs e)
         {
-            int nombreARetirer;
-            nombreARetirer = int.Parse(edtEmployeARetirer.Text);
-            unePharmacie.EnleverEmploye(unePharmacie.ObtenirListeEmploye()[nombreARetirer - 1]);
-            InitialiserListeEmploye(compteurEmploye);
+            try
+            {
+                int nombreARetirer;
+                nombreARetirer = int.Parse(edtEmployeARetirer.Text);
+                unePharmacie.EnleverEmploye(unePharmacie.ObtenirListeEmploye()[nombreARetirer - 1]);
+                InitialiserListeEmploye(compteurEmploye);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erreur de sélection.");
+            }
+
         }
 
         private void btnPremierEmploye_Click(object sender, EventArgs e)
         {
             lbxEmploye.SelectedIndex = 0;
         }
-
+        /// <summary>
+        /// Permet de changer tous les champs d'édition lorsqu'un employé est sélectionné
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lbxEmploye_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -298,10 +364,14 @@ namespace projetPharmacie
                 MessageBox.Show("Erreur de sélection");
             }
         }
-
+        /// <summary>
+        /// Affiche l'employé précédent du Listbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPrecedent_Click(object sender, EventArgs e)
         {
-            if (lbxEmploye.SelectedIndex ==0)
+            if (lbxEmploye.SelectedIndex == 0)
             {
                 lbxEmploye.SelectedIndex = unePharmacie.ObtenirNombreEmploye() - 1;
             }
@@ -311,7 +381,11 @@ namespace projetPharmacie
                 lbxEmploye.SelectedIndex = index;
             }
         }
-
+        /// <summary>
+        /// Affiche l'employé suivant du Listbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSuivant_Click(object sender, EventArgs e)
         {
             if (lbxEmploye.SelectedIndex == unePharmacie.ObtenirNombreEmploye() - 1)
@@ -324,7 +398,11 @@ namespace projetPharmacie
                 lbxEmploye.SelectedIndex = index;
             }
         }
-
+        /// <summary>
+        /// Affiche le dernier employé du Listbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDernier_Click(object sender, EventArgs e)
         {
             lbxEmploye.SelectedIndex = unePharmacie.ObtenirNombreEmploye() - 1;
@@ -334,7 +412,11 @@ namespace projetPharmacie
         {
 
         }
-
+        /// <summary>
+        /// Action qui se produit au changement de l'index du combobox, changeant le panel affiché à l'écran
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex == 0)
@@ -365,6 +447,9 @@ namespace projetPharmacie
                 }
             }
         }
+        /// <summary>
+        /// Méthode qui change la grandeur de la fenêtre à l'ouverture, et exécute la méthode OuvrirFichier()
+        /// </summary>
         private void OuvrirApplication()
         {
             this.Width = 200;

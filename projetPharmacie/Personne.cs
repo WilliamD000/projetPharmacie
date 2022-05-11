@@ -65,6 +65,9 @@ namespace projetPharmacie
             get { return courriel; }
             set { courriel = value; }
         }
+        /// <summary>
+        /// Constructeur non paramètré
+        /// </summary>
         public Personne()
         {
             prenom = "";
@@ -76,6 +79,17 @@ namespace projetPharmacie
             telephone = "";
             courriel = "";
         }
+        /// <summary>
+        /// Constructeur paramètré
+        /// </summary>
+        /// <param name="unPrenom">Un prénom</param>
+        /// <param name="unNom">Un nom</param>
+        /// <param name="uneAdresse">Une adresse</param>
+        /// <param name="uneVille">Une ville</param>
+        /// <param name="uneProvince"> Une province</param>
+        /// <param name="unCodePostal">Un code postal</param>
+        /// <param name="unTelephone">Un téléphone</param>
+        /// <param name="unCourriel">Un courriel</param>
         public Personne(string unPrenom, string unNom, string uneAdresse, string uneVille, string uneProvince, string unCodePostal, string unTelephone, string unCourriel)
         {
             prenom = unPrenom;
@@ -87,14 +101,27 @@ namespace projetPharmacie
             telephone = unTelephone;
             courriel = unCourriel;
         }
+        /// <summary>
+        /// Méthode remplaçant l'action par défaut .ToString()
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return (Prenom + ", " + Nom + ", " + Adresse + ", " + Ville + ", " + Province + ", " + CodePostal + ", " + Telephone + ", " + Courriel);
         }
+        /// <summary>
+        /// Permet d'attribuer un code unique à un objet
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             return (prenom.Length + nom.Length + courriel.Length);
         }
+        /// <summary>
+        /// Permet de comparer deux objets afin d'éviter les doublons
+        /// </summary>
+        /// <param name="obj">Objet à comparer</param>
+        /// <returns></returns>
         public override bool Equals(object obj)
         {
             return (obj != null) && (obj is Personne) && courriel.Equals((obj as Personne).courriel);
