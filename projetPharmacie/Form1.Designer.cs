@@ -59,7 +59,23 @@ namespace projetPharmacie
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.àProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.àProposToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelEmploye = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.edtEmployeARetirer = new System.Windows.Forms.TextBox();
+            this.btnRetirer = new System.Windows.Forms.Button();
+            this.btnPrecedent = new System.Windows.Forms.Button();
+            this.btnSuivant = new System.Windows.Forms.Button();
+            this.btnDernier = new System.Windows.Forms.Button();
+            this.btnPremierEmploye = new System.Windows.Forms.Button();
+            this.lbxEmploye = new System.Windows.Forms.ListBox();
+            this.btnViderListe = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.edtPrenomEmploye = new System.Windows.Forms.TextBox();
+            this.cbxActif = new System.Windows.Forms.CheckBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.edtPoste = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.edtNas = new System.Windows.Forms.TextBox();
             this.btnSupprimerEmploye = new System.Windows.Forms.Button();
             this.dtpDateEmbauche = new System.Windows.Forms.DateTimePicker();
             this.btnModifierEmploye = new System.Windows.Forms.Button();
@@ -82,25 +98,10 @@ namespace projetPharmacie
             this.edtAdresseEmploye = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.edtNomEmploye = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.edtPoste = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.edtNas = new System.Windows.Forms.TextBox();
-            this.cbxActif = new System.Windows.Forms.CheckBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.edtPrenomEmploye = new System.Windows.Forms.TextBox();
-            this.btnViderListe = new System.Windows.Forms.Button();
-            this.lbxEmploye = new System.Windows.Forms.ListBox();
-            this.btnPremierEmploye = new System.Windows.Forms.Button();
-            this.btnDernier = new System.Windows.Forms.Button();
-            this.btnSuivant = new System.Windows.Forms.Button();
-            this.btnPrecedent = new System.Windows.Forms.Button();
-            this.btnRetirer = new System.Windows.Forms.Button();
-            this.edtEmployeARetirer = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panelPharmacie.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panelEmploye.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelPharmacie
@@ -127,10 +128,11 @@ namespace projetPharmacie
             this.panelPharmacie.Controls.Add(this.edtAdressePharmacie);
             this.panelPharmacie.Controls.Add(this.label1);
             this.panelPharmacie.Controls.Add(this.edtNomPharmacie);
-            this.panelPharmacie.Location = new System.Drawing.Point(22, 40);
+            this.panelPharmacie.Location = new System.Drawing.Point(23, 96);
             this.panelPharmacie.Name = "panelPharmacie";
             this.panelPharmacie.Size = new System.Drawing.Size(319, 328);
             this.panelPharmacie.TabIndex = 0;
+            this.panelPharmacie.Visible = false;
             // 
             // btnSupprimerPharmacie
             // 
@@ -375,54 +377,200 @@ namespace projetPharmacie
             this.àProposToolStripMenuItem1.Text = "À propos";
             this.àProposToolStripMenuItem1.Click += new System.EventHandler(this.àProposToolStripMenuItem1_Click);
             // 
-            // panel1
+            // panelEmploye
             // 
-            this.panel1.Controls.Add(this.label22);
-            this.panel1.Controls.Add(this.edtEmployeARetirer);
-            this.panel1.Controls.Add(this.btnRetirer);
-            this.panel1.Controls.Add(this.btnPrecedent);
-            this.panel1.Controls.Add(this.btnSuivant);
-            this.panel1.Controls.Add(this.btnDernier);
-            this.panel1.Controls.Add(this.btnPremierEmploye);
-            this.panel1.Controls.Add(this.lbxEmploye);
-            this.panel1.Controls.Add(this.btnViderListe);
-            this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.edtPrenomEmploye);
-            this.panel1.Controls.Add(this.cbxActif);
-            this.panel1.Controls.Add(this.label20);
-            this.panel1.Controls.Add(this.edtPoste);
-            this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.edtNas);
-            this.panel1.Controls.Add(this.btnSupprimerEmploye);
-            this.panel1.Controls.Add(this.dtpDateEmbauche);
-            this.panel1.Controls.Add(this.btnModifierEmploye);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.edtNumeroEmploye);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.edtCourrielEmploye);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.edtTelephoneEmploye);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.edtProvinceEmploye);
-            this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.edtCodePostalEmploye);
-            this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.edtVilleEmploye);
-            this.panel1.Controls.Add(this.label17);
-            this.panel1.Controls.Add(this.btnCreerEmploye);
-            this.panel1.Controls.Add(this.edtAdresseEmploye);
-            this.panel1.Controls.Add(this.label18);
-            this.panel1.Controls.Add(this.edtNomEmploye);
-            this.panel1.Location = new System.Drawing.Point(413, 40);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(580, 359);
-            this.panel1.TabIndex = 2;
+            this.panelEmploye.Controls.Add(this.label22);
+            this.panelEmploye.Controls.Add(this.edtEmployeARetirer);
+            this.panelEmploye.Controls.Add(this.btnRetirer);
+            this.panelEmploye.Controls.Add(this.btnPrecedent);
+            this.panelEmploye.Controls.Add(this.btnSuivant);
+            this.panelEmploye.Controls.Add(this.btnDernier);
+            this.panelEmploye.Controls.Add(this.btnPremierEmploye);
+            this.panelEmploye.Controls.Add(this.lbxEmploye);
+            this.panelEmploye.Controls.Add(this.btnViderListe);
+            this.panelEmploye.Controls.Add(this.label19);
+            this.panelEmploye.Controls.Add(this.edtPrenomEmploye);
+            this.panelEmploye.Controls.Add(this.cbxActif);
+            this.panelEmploye.Controls.Add(this.label20);
+            this.panelEmploye.Controls.Add(this.edtPoste);
+            this.panelEmploye.Controls.Add(this.label21);
+            this.panelEmploye.Controls.Add(this.edtNas);
+            this.panelEmploye.Controls.Add(this.btnSupprimerEmploye);
+            this.panelEmploye.Controls.Add(this.dtpDateEmbauche);
+            this.panelEmploye.Controls.Add(this.btnModifierEmploye);
+            this.panelEmploye.Controls.Add(this.label7);
+            this.panelEmploye.Controls.Add(this.label8);
+            this.panelEmploye.Controls.Add(this.edtNumeroEmploye);
+            this.panelEmploye.Controls.Add(this.label9);
+            this.panelEmploye.Controls.Add(this.edtCourrielEmploye);
+            this.panelEmploye.Controls.Add(this.label12);
+            this.panelEmploye.Controls.Add(this.edtTelephoneEmploye);
+            this.panelEmploye.Controls.Add(this.label13);
+            this.panelEmploye.Controls.Add(this.label14);
+            this.panelEmploye.Controls.Add(this.edtProvinceEmploye);
+            this.panelEmploye.Controls.Add(this.label15);
+            this.panelEmploye.Controls.Add(this.edtCodePostalEmploye);
+            this.panelEmploye.Controls.Add(this.label16);
+            this.panelEmploye.Controls.Add(this.edtVilleEmploye);
+            this.panelEmploye.Controls.Add(this.label17);
+            this.panelEmploye.Controls.Add(this.btnCreerEmploye);
+            this.panelEmploye.Controls.Add(this.edtAdresseEmploye);
+            this.panelEmploye.Controls.Add(this.label18);
+            this.panelEmploye.Controls.Add(this.edtNomEmploye);
+            this.panelEmploye.Location = new System.Drawing.Point(417, 96);
+            this.panelEmploye.Name = "panelEmploye";
+            this.panelEmploye.Size = new System.Drawing.Size(580, 359);
+            this.panelEmploye.TabIndex = 2;
+            this.panelEmploye.Visible = false;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(326, 296);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(85, 13);
+            this.label22.TabIndex = 40;
+            this.label22.Text = "Employé à retirer";
+            // 
+            // edtEmployeARetirer
+            // 
+            this.edtEmployeARetirer.Location = new System.Drawing.Point(326, 315);
+            this.edtEmployeARetirer.Name = "edtEmployeARetirer";
+            this.edtEmployeARetirer.Size = new System.Drawing.Size(100, 20);
+            this.edtEmployeARetirer.TabIndex = 39;
+            // 
+            // btnRetirer
+            // 
+            this.btnRetirer.Location = new System.Drawing.Point(433, 315);
+            this.btnRetirer.Name = "btnRetirer";
+            this.btnRetirer.Size = new System.Drawing.Size(75, 23);
+            this.btnRetirer.TabIndex = 38;
+            this.btnRetirer.Text = "Retirer";
+            this.btnRetirer.UseVisualStyleBackColor = true;
+            this.btnRetirer.Click += new System.EventHandler(this.btnRetirer_Click);
+            // 
+            // btnPrecedent
+            // 
+            this.btnPrecedent.Location = new System.Drawing.Point(326, 214);
+            this.btnPrecedent.Name = "btnPrecedent";
+            this.btnPrecedent.Size = new System.Drawing.Size(80, 36);
+            this.btnPrecedent.TabIndex = 37;
+            this.btnPrecedent.Text = "Précédent";
+            this.btnPrecedent.UseVisualStyleBackColor = true;
+            this.btnPrecedent.Click += new System.EventHandler(this.btnPrecedent_Click);
+            // 
+            // btnSuivant
+            // 
+            this.btnSuivant.Location = new System.Drawing.Point(244, 256);
+            this.btnSuivant.Name = "btnSuivant";
+            this.btnSuivant.Size = new System.Drawing.Size(80, 36);
+            this.btnSuivant.TabIndex = 36;
+            this.btnSuivant.Text = "Suivant";
+            this.btnSuivant.UseVisualStyleBackColor = true;
+            this.btnSuivant.Click += new System.EventHandler(this.btnSuivant_Click);
+            // 
+            // btnDernier
+            // 
+            this.btnDernier.Location = new System.Drawing.Point(326, 256);
+            this.btnDernier.Name = "btnDernier";
+            this.btnDernier.Size = new System.Drawing.Size(80, 36);
+            this.btnDernier.TabIndex = 35;
+            this.btnDernier.Text = "Dernier";
+            this.btnDernier.UseVisualStyleBackColor = true;
+            this.btnDernier.Click += new System.EventHandler(this.btnDernier_Click);
+            // 
+            // btnPremierEmploye
+            // 
+            this.btnPremierEmploye.Location = new System.Drawing.Point(244, 214);
+            this.btnPremierEmploye.Name = "btnPremierEmploye";
+            this.btnPremierEmploye.Size = new System.Drawing.Size(80, 36);
+            this.btnPremierEmploye.TabIndex = 34;
+            this.btnPremierEmploye.Text = "Premier";
+            this.btnPremierEmploye.UseVisualStyleBackColor = true;
+            this.btnPremierEmploye.Click += new System.EventHandler(this.btnPremierEmploye_Click);
+            // 
+            // lbxEmploye
+            // 
+            this.lbxEmploye.FormattingEnabled = true;
+            this.lbxEmploye.Location = new System.Drawing.Point(412, 30);
+            this.lbxEmploye.Name = "lbxEmploye";
+            this.lbxEmploye.Size = new System.Drawing.Size(147, 264);
+            this.lbxEmploye.TabIndex = 33;
+            this.lbxEmploye.SelectedIndexChanged += new System.EventHandler(this.lbxEmploye_SelectedIndexChanged);
+            // 
+            // btnViderListe
+            // 
+            this.btnViderListe.Location = new System.Drawing.Point(6, 315);
+            this.btnViderListe.Name = "btnViderListe";
+            this.btnViderListe.Size = new System.Drawing.Size(75, 28);
+            this.btnViderListe.TabIndex = 32;
+            this.btnViderListe.Text = "Vider liste";
+            this.btnViderListe.UseVisualStyleBackColor = true;
+            this.btnViderListe.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(15, 37);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(43, 13);
+            this.label19.TabIndex = 31;
+            this.label19.Text = "Prenom";
+            // 
+            // edtPrenomEmploye
+            // 
+            this.edtPrenomEmploye.Location = new System.Drawing.Point(15, 56);
+            this.edtPrenomEmploye.Name = "edtPrenomEmploye";
+            this.edtPrenomEmploye.Size = new System.Drawing.Size(100, 20);
+            this.edtPrenomEmploye.TabIndex = 30;
+            this.edtPrenomEmploye.Text = "Yvan";
+            // 
+            // cbxActif
+            // 
+            this.cbxActif.AutoSize = true;
+            this.cbxActif.Location = new System.Drawing.Point(309, 191);
+            this.cbxActif.Name = "cbxActif";
+            this.cbxActif.Size = new System.Drawing.Size(47, 17);
+            this.cbxActif.TabIndex = 29;
+            this.cbxActif.Text = "Actif";
+            this.cbxActif.UseVisualStyleBackColor = true;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(306, 86);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(34, 13);
+            this.label20.TabIndex = 26;
+            this.label20.Text = "Poste";
+            // 
+            // edtPoste
+            // 
+            this.edtPoste.Location = new System.Drawing.Point(306, 105);
+            this.edtPoste.Name = "edtPoste";
+            this.edtPoste.Size = new System.Drawing.Size(100, 20);
+            this.edtPoste.TabIndex = 25;
+            this.edtPoste.Text = "Stagiaire";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(306, 37);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(26, 13);
+            this.label21.TabIndex = 24;
+            this.label21.Text = "Nas";
+            // 
+            // edtNas
+            // 
+            this.edtNas.Location = new System.Drawing.Point(306, 56);
+            this.edtNas.Name = "edtNas";
+            this.edtNas.Size = new System.Drawing.Size(100, 20);
+            this.edtNas.TabIndex = 23;
+            this.edtNas.Text = "12345";
             // 
             // btnSupprimerEmploye
             // 
-            this.btnSupprimerEmploye.Enabled = false;
             this.btnSupprimerEmploye.Location = new System.Drawing.Point(101, 315);
             this.btnSupprimerEmploye.Name = "btnSupprimerEmploye";
             this.btnSupprimerEmploye.Size = new System.Drawing.Size(75, 28);
@@ -441,7 +589,6 @@ namespace projetPharmacie
             // 
             // btnModifierEmploye
             // 
-            this.btnModifierEmploye.Enabled = false;
             this.btnModifierEmploye.Location = new System.Drawing.Point(101, 266);
             this.btnModifierEmploye.Name = "btnModifierEmploye";
             this.btnModifierEmploye.Size = new System.Drawing.Size(75, 28);
@@ -614,163 +761,39 @@ namespace projetPharmacie
             this.edtNomEmploye.TabIndex = 2;
             this.edtNomEmploye.Text = "Côté";
             // 
-            // label20
+            // comboBox1
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(306, 86);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(34, 13);
-            this.label20.TabIndex = 26;
-            this.label20.Text = "Poste";
-            // 
-            // edtPoste
-            // 
-            this.edtPoste.Location = new System.Drawing.Point(306, 105);
-            this.edtPoste.Name = "edtPoste";
-            this.edtPoste.Size = new System.Drawing.Size(100, 20);
-            this.edtPoste.TabIndex = 25;
-            this.edtPoste.Text = "Stagiaire";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(306, 37);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(26, 13);
-            this.label21.TabIndex = 24;
-            this.label21.Text = "Nas";
-            // 
-            // edtNas
-            // 
-            this.edtNas.Location = new System.Drawing.Point(306, 56);
-            this.edtNas.Name = "edtNas";
-            this.edtNas.Size = new System.Drawing.Size(100, 20);
-            this.edtNas.TabIndex = 23;
-            this.edtNas.Text = "12345";
-            // 
-            // cbxActif
-            // 
-            this.cbxActif.AutoSize = true;
-            this.cbxActif.Location = new System.Drawing.Point(309, 191);
-            this.cbxActif.Name = "cbxActif";
-            this.cbxActif.Size = new System.Drawing.Size(47, 17);
-            this.cbxActif.TabIndex = 29;
-            this.cbxActif.Text = "Actif";
-            this.cbxActif.UseVisualStyleBackColor = true;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(15, 37);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(43, 13);
-            this.label19.TabIndex = 31;
-            this.label19.Text = "Prenom";
-            // 
-            // edtPrenomEmploye
-            // 
-            this.edtPrenomEmploye.Location = new System.Drawing.Point(15, 56);
-            this.edtPrenomEmploye.Name = "edtPrenomEmploye";
-            this.edtPrenomEmploye.Size = new System.Drawing.Size(100, 20);
-            this.edtPrenomEmploye.TabIndex = 30;
-            this.edtPrenomEmploye.Text = "Yvan";
-            // 
-            // btnViderListe
-            // 
-            this.btnViderListe.Location = new System.Drawing.Point(6, 315);
-            this.btnViderListe.Name = "btnViderListe";
-            this.btnViderListe.Size = new System.Drawing.Size(75, 28);
-            this.btnViderListe.TabIndex = 32;
-            this.btnViderListe.Text = "Vider liste";
-            this.btnViderListe.UseVisualStyleBackColor = true;
-            this.btnViderListe.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // lbxEmploye
-            // 
-            this.lbxEmploye.FormattingEnabled = true;
-            this.lbxEmploye.Location = new System.Drawing.Point(412, 30);
-            this.lbxEmploye.Name = "lbxEmploye";
-            this.lbxEmploye.Size = new System.Drawing.Size(154, 264);
-            this.lbxEmploye.TabIndex = 33;
-            // 
-            // btnPremierEmploye
-            // 
-            this.btnPremierEmploye.Location = new System.Drawing.Point(244, 214);
-            this.btnPremierEmploye.Name = "btnPremierEmploye";
-            this.btnPremierEmploye.Size = new System.Drawing.Size(80, 36);
-            this.btnPremierEmploye.TabIndex = 34;
-            this.btnPremierEmploye.Text = "Premier";
-            this.btnPremierEmploye.UseVisualStyleBackColor = true;
-            // 
-            // btnDernier
-            // 
-            this.btnDernier.Location = new System.Drawing.Point(326, 256);
-            this.btnDernier.Name = "btnDernier";
-            this.btnDernier.Size = new System.Drawing.Size(80, 36);
-            this.btnDernier.TabIndex = 35;
-            this.btnDernier.Text = "Dernier";
-            this.btnDernier.UseVisualStyleBackColor = true;
-            // 
-            // btnSuivant
-            // 
-            this.btnSuivant.Location = new System.Drawing.Point(244, 256);
-            this.btnSuivant.Name = "btnSuivant";
-            this.btnSuivant.Size = new System.Drawing.Size(80, 36);
-            this.btnSuivant.TabIndex = 36;
-            this.btnSuivant.Text = "Suivant";
-            this.btnSuivant.UseVisualStyleBackColor = true;
-            // 
-            // btnPrecedent
-            // 
-            this.btnPrecedent.Location = new System.Drawing.Point(326, 214);
-            this.btnPrecedent.Name = "btnPrecedent";
-            this.btnPrecedent.Size = new System.Drawing.Size(80, 36);
-            this.btnPrecedent.TabIndex = 37;
-            this.btnPrecedent.Text = "Précédent";
-            this.btnPrecedent.UseVisualStyleBackColor = true;
-            // 
-            // btnRetirer
-            // 
-            this.btnRetirer.Location = new System.Drawing.Point(433, 315);
-            this.btnRetirer.Name = "btnRetirer";
-            this.btnRetirer.Size = new System.Drawing.Size(75, 23);
-            this.btnRetirer.TabIndex = 38;
-            this.btnRetirer.Text = "Retirer";
-            this.btnRetirer.UseVisualStyleBackColor = true;
-            // 
-            // edtEmployeARetirer
-            // 
-            this.edtEmployeARetirer.Location = new System.Drawing.Point(326, 315);
-            this.edtEmployeARetirer.Name = "edtEmployeARetirer";
-            this.edtEmployeARetirer.Size = new System.Drawing.Size(100, 20);
-            this.edtEmployeARetirer.TabIndex = 39;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(326, 296);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(85, 13);
-            this.label22.TabIndex = 40;
-            this.label22.Text = "Employé à retirer";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Aucun",
+            "Pharmacie",
+            "Employe"});
+            this.comboBox1.Location = new System.Drawing.Point(66, 45);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 3;
+            this.comboBox1.Text = "Afficher";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1215, 598);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.panelEmploye);
             this.Controls.Add(this.panelPharmacie);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Programme pharmacie";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panelPharmacie.ResumeLayout(false);
             this.panelPharmacie.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelEmploye.ResumeLayout(false);
+            this.panelEmploye.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -808,7 +831,7 @@ namespace projetPharmacie
         private System.Windows.Forms.ToolStripMenuItem àProposToolStripMenuItem1;
         private System.Windows.Forms.Button btnSupprimerPharmacie;
         private System.Windows.Forms.Button btnModifierPharmacie;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelEmploye;
         private System.Windows.Forms.Button btnSupprimerEmploye;
         private System.Windows.Forms.DateTimePicker dtpDateEmbauche;
         private System.Windows.Forms.Button btnModifierEmploye;
@@ -847,6 +870,7 @@ namespace projetPharmacie
         private System.Windows.Forms.Button btnPremierEmploye;
         private System.Windows.Forms.ListBox lbxEmploye;
         private System.Windows.Forms.Button btnViderListe;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

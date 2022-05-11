@@ -135,7 +135,7 @@ namespace projetPharmacie
             {
                 if (employe.Equals(unEmploye))
                 {
-                    return(employe);
+                    return (employe);
                 }
             }
             return null;

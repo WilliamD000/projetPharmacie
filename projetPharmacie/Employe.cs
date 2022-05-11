@@ -4,10 +4,6 @@
  * Auteur  : William Desjardins
  * But     : Objet qui représente un Employé*/
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace projetPharmacie
 {
@@ -81,7 +77,7 @@ namespace projetPharmacie
         /// <returns>Liste d'informations de l'employé</returns>
         public override string ToString()
         {
-            return (Prenom + ", " + Nom + ", " + Adresse + ", " + Ville + ", " + Province + ", " + CodePostal + ", " + Telephone + ", " 
+            return (Prenom + ", " + Nom + ", " + Adresse + ", " + Ville + ", " + Province + ", " + CodePostal + ", " + Telephone + ", "
                 + Courriel + ", " + Poste + ", " + Nas + ", " + NumeroEmploye + ", actif:" + Actif);
         }
         /// <summary>

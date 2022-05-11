@@ -167,11 +167,17 @@ namespace projetPharmacie
                 unEmploye.Actif = cbxActif.Checked;
                 unEmploye.Poste = edtPoste.Text;
                 unEmploye.DateEmbauche = dtpDateEmbauche.Value;
-                unePharmacie.AjouterEmploye(unEmploye);
-                btnCreerEmploye.Enabled = false;
-                btnModifierEmploye.Enabled = true;
-                btnSupprimerEmploye.Enabled = true;
-                InitialiserListeEmploye(compteurEmploye);
+                if (unePharmacie.AjouterEmploye(unEmploye) == false)
+                {
+                    MessageBox.Show("Cet employé existe déja.");
+                }
+                else
+                {
+                    compteurEmploye++;
+                    unePharmacie.AjouterEmploye(unEmploye);
+                    InitialiserListeEmploye(compteurEmploye);
+                }
+
             }
             catch (Exception)
             {
@@ -194,7 +200,7 @@ namespace projetPharmacie
                 }
                 else
                 {
-                    index = lbxEmploye.SelectedIndex + 1;
+                    index = lbxEmploye.SelectedIndex;
                     unePharmacie.ObtenirListeEmploye()[index].Prenom = edtPrenomEmploye.Text;
                     unePharmacie.ObtenirListeEmploye()[index].Nom = edtNomEmploye.Text;
                     unePharmacie.ObtenirListeEmploye()[index].Adresse = edtAdresseEmploye.Text;
@@ -236,6 +242,7 @@ namespace projetPharmacie
         public int InitialiserListeEmploye(int compteurEmploye)
         {
             lbxEmploye.Items.Clear();
+            compteurEmploye = 0;
             foreach (Employe employe in unePharmacie.ObtenirListeEmploye())
             {
                 compteurEmploye++;
@@ -246,8 +253,111 @@ namespace projetPharmacie
 
         private void btnSupprimerEmploye_Click(object sender, EventArgs e)
         {
-            unePharmacie.EnleverEmploye(unEmploye);
+            unePharmacie.EnleverEmploye(unePharmacie.ObtenirListeEmploye()[lbxEmploye.SelectedIndex-1]);
             InitialiserListeEmploye(compteurEmploye);
+        }
+
+        private void btnRetirer_Click(object sender, EventArgs e)
+        {
+            int nombreARetirer;
+            nombreARetirer = int.Parse(edtEmployeARetirer.Text);
+            unePharmacie.EnleverEmploye(unePharmacie.ObtenirListeEmploye()[nombreARetirer - 1]);
+            InitialiserListeEmploye(compteurEmploye);
+        }
+
+        private void btnPremierEmploye_Click(object sender, EventArgs e)
+        {
+            lbxEmploye.SelectedIndex = 0;
+        }
+
+        private void lbxEmploye_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Employe[] tableauEmploye;
+                index = lbxEmploye.SelectedIndex;
+                tableauEmploye = unePharmacie.ObtenirListeEmploye();
+                edtPrenomEmploye.Text = tableauEmploye[index].Prenom;
+                edtNomEmploye.Text = tableauEmploye[index].Nom;
+                edtAdresseEmploye.Text = tableauEmploye[index].Adresse;
+                edtVilleEmploye.Text = tableauEmploye[index].Ville;
+                edtProvinceEmploye.Text = tableauEmploye[index].Province;
+                edtCodePostalEmploye.Text = tableauEmploye[index].CodePostal;
+                edtTelephoneEmploye.Text = tableauEmploye[index].Telephone;
+                edtCourrielEmploye.Text = tableauEmploye[index].Courriel;
+                edtNumeroEmploye.Text = tableauEmploye[index].NumeroEmploye.ToString();
+                edtNas.Text = tableauEmploye[index].Nas.ToString();
+                edtPoste.Text = tableauEmploye[index].Poste;
+                cbxActif.Checked = tableauEmploye[index].Actif;
+                dtpDateEmbauche.Value = tableauEmploye[index].DateEmbauche;
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Erreur de sélection");
+            }
+        }
+
+        private void btnPrecedent_Click(object sender, EventArgs e)
+        {
+            if (lbxEmploye.SelectedIndex ==0)
+            {
+                lbxEmploye.SelectedIndex = unePharmacie.ObtenirNombreEmploye() - 1;
+            }
+            else
+            {
+                index = lbxEmploye.SelectedIndex - 1;
+                lbxEmploye.SelectedIndex = index;
+            }
+        }
+
+        private void btnSuivant_Click(object sender, EventArgs e)
+        {
+            if (lbxEmploye.SelectedIndex == unePharmacie.ObtenirNombreEmploye() - 1)
+            {
+                lbxEmploye.SelectedIndex = 0;
+            }
+            else
+            {
+                index = lbxEmploye.SelectedIndex + 1;
+                lbxEmploye.SelectedIndex = index;
+            }
+        }
+
+        private void btnDernier_Click(object sender, EventArgs e)
+        {
+            lbxEmploye.SelectedIndex = unePharmacie.ObtenirNombreEmploye() - 1;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0)
+            {
+                panelPharmacie.Visible = false;
+                panelEmploye.Visible = false;
+            }
+            else
+            {
+                if (comboBox1.SelectedIndex == 1)
+                {
+                    panelEmploye.Visible = false;
+                    panelPharmacie.Visible = true;
+                }
+                else
+                {
+                    if (comboBox1.SelectedIndex == 2)
+                    {
+                        panelEmploye.Visible = true;
+                        panelPharmacie.Visible = false;
+                    }
+                }
+            }
         }
     }
 }

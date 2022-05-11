@@ -3,11 +3,6 @@
  * Version : 1.0
  * Auteur  : William Desjardins
  * But     : Objet qui représente une personne*/
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace projetPharmacie
 {
@@ -24,9 +19,10 @@ namespace projetPharmacie
 
         public string Nom
         {
-            get { return prenom; }
-            set { prenom = value; }
+            get { return nom; }
+            set { nom = value; }
         }
+
         private string adresse;
 
         public string Adresse
@@ -93,15 +89,15 @@ namespace projetPharmacie
         }
         public override string ToString()
         {
-            return(prenom + ", " + nom + ", " + adresse + ", " + ville + ", " + province + ", " + codePostal + ", " + telephone + ", " +  courriel);
+            return (Prenom + ", " + Nom + ", " + Adresse + ", " + Ville + ", " + Province + ", " + CodePostal + ", " + Telephone + ", " + Courriel);
         }
         public override int GetHashCode()
         {
-            return(prenom.Length + nom.Length + courriel.Length);
+            return (prenom.Length + nom.Length + courriel.Length);
         }
         public override bool Equals(object obj)
         {
-            return(obj != null) && (obj is Personne) && courriel.Equals((obj as Personne).courriel);
+            return (obj != null) && (obj is Personne) && courriel.Equals((obj as Personne).courriel);
         }
 
         public Pharmacie Pharmacie
