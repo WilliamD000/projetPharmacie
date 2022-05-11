@@ -128,7 +128,7 @@ namespace projetPharmacie
             this.panelPharmacie.Controls.Add(this.edtAdressePharmacie);
             this.panelPharmacie.Controls.Add(this.label1);
             this.panelPharmacie.Controls.Add(this.edtNomPharmacie);
-            this.panelPharmacie.Location = new System.Drawing.Point(12, 70);
+            this.panelPharmacie.Location = new System.Drawing.Point(12, 54);
             this.panelPharmacie.Name = "panelPharmacie";
             this.panelPharmacie.Size = new System.Drawing.Size(319, 335);
             this.panelPharmacie.TabIndex = 0;
@@ -438,6 +438,7 @@ namespace projetPharmacie
             this.edtEmployeARetirer.Name = "edtEmployeARetirer";
             this.edtEmployeARetirer.Size = new System.Drawing.Size(100, 20);
             this.edtEmployeARetirer.TabIndex = 39;
+            this.edtEmployeARetirer.Text = "1";
             // 
             // btnRetirer
             // 

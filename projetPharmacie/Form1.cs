@@ -21,7 +21,7 @@ namespace projetPharmacie
         public Form1()
         {
             InitializeComponent();
-            OuvrirFichier();
+            OuvrirApplication();
         }
         private void btnCreerPharmacie_Click(object sender, EventArgs e)
         {
@@ -351,7 +351,7 @@ namespace projetPharmacie
                     panelEmploye.Visible = false;
                     panelPharmacie.Visible = true;
                     this.Width = 339;
-                    this.Height = 450;
+                    this.Height = 420;
                 }
                 else
                 {
@@ -359,11 +359,17 @@ namespace projetPharmacie
                     {
                         panelEmploye.Visible = true;
                         panelPharmacie.Visible = false;
-                        this.Width = 650;
-                        this.Height = 500;
+                        this.Width = 610;
+                        this.Height = 460;
                     }
                 }
             }
+        }
+        private void OuvrirApplication()
+        {
+            this.Width = 200;
+            this.Height = 100;
+            OuvrirFichier();
         }
     }
 }
