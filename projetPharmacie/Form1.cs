@@ -16,8 +16,9 @@ namespace projetPharmacie
         XmlSerializer serializer = new XmlSerializer(typeof(Pharmacie));
         Pharmacie unePharmacie;
         Employe unEmploye;
+        Prescription unePrescription;
         int index = 0;
-        int compteurEmploye = 0;
+        int compteurEmploye = 0, compteurPrescription = 0;
         public Form1()
         {
             InitializeComponent();
@@ -449,11 +450,13 @@ namespace projetPharmacie
                     }
                     else
                     {
-                        if (comboBox1.SelectedIndex==3)
+                        if (comboBox1.SelectedIndex == 3)
                         {
                             panelPrescription.Visible = true;
                             panelPharmacie.Visible = false;
                             panelEmploye.Visible = false;
+                            this.Width = 495;
+                            this.Height = 420;
                         }
                     }
                 }
@@ -467,6 +470,37 @@ namespace projetPharmacie
             this.Width = 200;
             this.Height = 100;
             OuvrirFichier();
+        }
+
+        private void btnCreerPrescription_Click(object sender, EventArgs e)
+        {
+            unePrescription = new Prescription();
+            unePrescription.Active = cbxActivePrescription.Checked;
+            unePrescription.DateInscription = dtpDateInscriptionPrescription.Value;
+            unePrescription.NumeroPrescription = int.Parse(edtNumeroPrescription.Text);
+            unePharmacie.AjouterPrescription(unePrescription);
+            InitialiserListePrescriptions(compteurPrescription);
+        }
+
+        private void btnModifierPrescription_Click(object sender, EventArgs e)
+        {
+            index = lbxPrescriptions.SelectedIndex + 1;
+            unePharmacie.ObtenirListePrescription()[index].Active = cbxActivePrescription.Checked;
+            unePharmacie.ObtenirListePrescription()[index].DateInscription = dtpDateInscriptionPrescription.Value;
+            unePharmacie.ObtenirListePrescription()[index].NumeroPrescription = int.Parse(edtNumeroPrescription.Text);
+            InitialiserListePrescriptions(compteurPrescription);
+        }
+        public int InitialiserListePrescriptions(int compteurPrescription)
+        {
+            lbxPrescriptions.Items.Clear();
+            Prescription[] tableauPrescription = unePharmacie.ObtenirListePrescription();
+            compteurPrescription = 0;
+            foreach (Prescription unePrescription in tableauPrescription)
+            {
+                compteurPrescription++;
+                lbxPrescriptions.Items.Add(compteurPrescription.ToString() + "- " + unePrescription.ToString());
+            }
+            return compteurPrescription;
         }
     }
 }

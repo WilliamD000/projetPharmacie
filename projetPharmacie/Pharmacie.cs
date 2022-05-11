@@ -74,6 +74,7 @@ namespace projetPharmacie
             set { anneeDImplantationPharmacie = value; }
         }
         public List<Employe> listeEmploye = new List<Employe>();
+        public List<Prescription> listePrescription = new List<Prescription>();
         /// <summary>
         /// Constructeur non paramètré
         /// </summary>
@@ -213,6 +214,15 @@ namespace projetPharmacie
             listeEmploye.Clear();
             return SiAucunEmploye();
         }
+        public void AjouterPrescription(Prescription unePrescription)
+        {
+            listePrescription.Add(unePrescription);
+        }
+        public Prescription[] ObtenirListePrescription()
+        {
+            return listePrescription.ToArray();
+        }
+
         /// <summary>
         /// Remplace la méthode "ToString" de l'objet
         /// </summary>

@@ -104,7 +104,7 @@ namespace projetPharmacie
         /// <summary>
         /// Méthode remplaçant l'action par défaut .ToString()
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Les informations de la personne en un String</returns>
         public override string ToString()
         {
             return (Prenom + ", " + Nom + ", " + Adresse + ", " + Ville + ", " + Province + ", " + CodePostal + ", " + Telephone + ", " + Courriel);
@@ -112,7 +112,7 @@ namespace projetPharmacie
         /// <summary>
         /// Permet d'attribuer un code unique à un objet
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Code de Hashage</returns>
         public override int GetHashCode()
         {
             return (prenom.Length + nom.Length + courriel.Length);
@@ -121,7 +121,7 @@ namespace projetPharmacie
         /// Permet de comparer deux objets afin d'éviter les doublons
         /// </summary>
         /// <param name="obj">Objet à comparer</param>
-        /// <returns></returns>
+        /// <returns>Valeur booléene</returns>
         public override bool Equals(object obj)
         {
             return (obj != null) && (obj is Personne) && courriel.Equals((obj as Personne).courriel);

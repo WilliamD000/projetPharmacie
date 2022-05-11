@@ -3,7 +3,7 @@
   <Class Name="projetPharmacie.Pharmacie" Collapsed="true">
     <Position X="2.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAEAAAAAQABEkAEAARQABAAA0IAAANEAAQAAAAA=</HashCode>
+      <HashCode>AQAAAIEAiAAAQABE0AEAARQABAAA0IggAtEAgQAgAAA=</HashCode>
       <FileName>Pharmacie.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -22,6 +22,16 @@
     <TypeIdentifier>
       <HashCode>AAAIgAQAAIAAAAAEgCAAAAAgAAAAEIAABBAAAACACAA=</HashCode>
       <FileName>Employe.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Pharmacie" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="projetPharmacie.Prescription" Collapsed="true">
+    <Position X="0.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAQAAAAAoAEgAAAAAAAAAAAAIAgAAAAIACAAAA=</HashCode>
+      <FileName>Prescription.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Pharmacie" />

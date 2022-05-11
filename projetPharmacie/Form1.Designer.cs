@@ -118,6 +118,7 @@ namespace projetPharmacie
             this.btnPrecedentPrescription = new System.Windows.Forms.Button();
             this.btnPremierPrescription = new System.Windows.Forms.Button();
             this.btnRetirerPrescription = new System.Windows.Forms.Button();
+            this.label27 = new System.Windows.Forms.Label();
             this.panelPharmacie.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panelEmploye.SuspendLayout();
@@ -799,6 +800,7 @@ namespace projetPharmacie
             // 
             // panelPrescription
             // 
+            this.panelPrescription.Controls.Add(this.label27);
             this.panelPrescription.Controls.Add(this.btnRetirerPrescription);
             this.panelPrescription.Controls.Add(this.btnPrecedentPrescription);
             this.panelPrescription.Controls.Add(this.btnPremierPrescription);
@@ -817,10 +819,11 @@ namespace projetPharmacie
             this.panelPrescription.Controls.Add(this.label24);
             this.panelPrescription.Controls.Add(this.edtNumeroPrescription);
             this.panelPrescription.Controls.Add(this.label23);
-            this.panelPrescription.Location = new System.Drawing.Point(674, 140);
+            this.panelPrescription.Location = new System.Drawing.Point(12, 54);
             this.panelPrescription.Name = "panelPrescription";
             this.panelPrescription.Size = new System.Drawing.Size(462, 318);
             this.panelPrescription.TabIndex = 4;
+            this.panelPrescription.Visible = false;
             // 
             // label23
             // 
@@ -859,7 +862,7 @@ namespace projetPharmacie
             // 
             // dtpDateInscriptionPrescription
             // 
-            this.dtpDateInscriptionPrescription.Location = new System.Drawing.Point(15, 39);
+            this.dtpDateInscriptionPrescription.Location = new System.Drawing.Point(15, 46);
             this.dtpDateInscriptionPrescription.Name = "dtpDateInscriptionPrescription";
             this.dtpDateInscriptionPrescription.Size = new System.Drawing.Size(200, 20);
             this.dtpDateInscriptionPrescription.TabIndex = 10;
@@ -868,7 +871,7 @@ namespace projetPharmacie
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(15, 20);
+            this.label25.Location = new System.Drawing.Point(15, 27);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(89, 13);
             this.label25.TabIndex = 11;
@@ -919,7 +922,7 @@ namespace projetPharmacie
             // 
             // btnViderListePrescription
             // 
-            this.btnViderListePrescription.Location = new System.Drawing.Point(10, 177);
+            this.btnViderListePrescription.Location = new System.Drawing.Point(10, 266);
             this.btnViderListePrescription.Name = "btnViderListePrescription";
             this.btnViderListePrescription.Size = new System.Drawing.Size(75, 28);
             this.btnViderListePrescription.TabIndex = 44;
@@ -928,7 +931,7 @@ namespace projetPharmacie
             // 
             // btnSupprimerPrescription
             // 
-            this.btnSupprimerPrescription.Location = new System.Drawing.Point(10, 272);
+            this.btnSupprimerPrescription.Location = new System.Drawing.Point(10, 220);
             this.btnSupprimerPrescription.Name = "btnSupprimerPrescription";
             this.btnSupprimerPrescription.Size = new System.Drawing.Size(75, 28);
             this.btnSupprimerPrescription.TabIndex = 43;
@@ -937,12 +940,13 @@ namespace projetPharmacie
             // 
             // btnModifierPrescription
             // 
-            this.btnModifierPrescription.Location = new System.Drawing.Point(10, 226);
+            this.btnModifierPrescription.Location = new System.Drawing.Point(10, 174);
             this.btnModifierPrescription.Name = "btnModifierPrescription";
             this.btnModifierPrescription.Size = new System.Drawing.Size(75, 28);
             this.btnModifierPrescription.TabIndex = 42;
             this.btnModifierPrescription.Text = "Modifier";
             this.btnModifierPrescription.UseVisualStyleBackColor = true;
+            this.btnModifierPrescription.Click += new System.EventHandler(this.btnModifierPrescription_Click);
             // 
             // btnCreerPrescription
             // 
@@ -952,6 +956,7 @@ namespace projetPharmacie
             this.btnCreerPrescription.TabIndex = 41;
             this.btnCreerPrescription.Text = "Créer";
             this.btnCreerPrescription.UseVisualStyleBackColor = true;
+            this.btnCreerPrescription.Click += new System.EventHandler(this.btnCreerPrescription_Click);
             // 
             // btnPrecedentPrescription
             // 
@@ -979,6 +984,15 @@ namespace projetPharmacie
             this.btnRetirerPrescription.TabIndex = 51;
             this.btnRetirerPrescription.Text = "Retirer";
             this.btnRetirerPrescription.UseVisualStyleBackColor = true;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(15, 5);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(62, 13);
+            this.label27.TabIndex = 52;
+            this.label27.Text = "Prescription";
             // 
             // Form1
             // 
@@ -1098,6 +1112,7 @@ namespace projetPharmacie
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox edtNumeroPrescription;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label27;
     }
 }
 
