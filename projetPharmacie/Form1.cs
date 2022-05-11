@@ -423,6 +423,7 @@ namespace projetPharmacie
             {
                 panelPharmacie.Visible = false;
                 panelEmploye.Visible = false;
+                panelPrescription.Visible = false;
                 this.Width = 200;
                 this.Height = 100;
             }
@@ -432,6 +433,7 @@ namespace projetPharmacie
                 {
                     panelEmploye.Visible = false;
                     panelPharmacie.Visible = true;
+                    panelPrescription.Visible = false;
                     this.Width = 339;
                     this.Height = 420;
                 }
@@ -441,8 +443,18 @@ namespace projetPharmacie
                     {
                         panelEmploye.Visible = true;
                         panelPharmacie.Visible = false;
+                        panelPrescription.Visible = false;
                         this.Width = 610;
                         this.Height = 460;
+                    }
+                    else
+                    {
+                        if (comboBox1.SelectedIndex==3)
+                        {
+                            panelPrescription.Visible = true;
+                            panelPharmacie.Visible = false;
+                            panelEmploye.Visible = false;
+                        }
                     }
                 }
             }

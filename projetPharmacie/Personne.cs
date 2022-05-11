@@ -1,4 +1,4 @@
-﻿/* Objet   : Pharmacie
+﻿/* Objet   : Personne
  * Date    : 2022/05/04
  * Version : 1.0
  * Auteur  : William Desjardins

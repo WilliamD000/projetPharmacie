@@ -99,9 +99,29 @@ namespace projetPharmacie
             this.label18 = new System.Windows.Forms.Label();
             this.edtNomEmploye = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.panelPrescription = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
+            this.edtNumeroPrescription = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.cbxActivePrescription = new System.Windows.Forms.CheckBox();
+            this.dtpDateInscriptionPrescription = new System.Windows.Forms.DateTimePicker();
+            this.label25 = new System.Windows.Forms.Label();
+            this.lbxPrescriptions = new System.Windows.Forms.ListBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.edtRetirerPrescription = new System.Windows.Forms.TextBox();
+            this.btnSuivantPrescription = new System.Windows.Forms.Button();
+            this.btnDernierPrescription = new System.Windows.Forms.Button();
+            this.btnViderListePrescription = new System.Windows.Forms.Button();
+            this.btnSupprimerPrescription = new System.Windows.Forms.Button();
+            this.btnModifierPrescription = new System.Windows.Forms.Button();
+            this.btnCreerPrescription = new System.Windows.Forms.Button();
+            this.btnPrecedentPrescription = new System.Windows.Forms.Button();
+            this.btnPremierPrescription = new System.Windows.Forms.Button();
+            this.btnRetirerPrescription = new System.Windows.Forms.Button();
             this.panelPharmacie.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panelEmploye.SuspendLayout();
+            this.panelPrescription.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelPharmacie
@@ -768,7 +788,8 @@ namespace projetPharmacie
             this.comboBox1.Items.AddRange(new object[] {
             "Aucun",
             "Pharmacie",
-            "Employe"});
+            "Employes",
+            "Prescriptions"});
             this.comboBox1.Location = new System.Drawing.Point(12, 27);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
@@ -776,11 +797,195 @@ namespace projetPharmacie
             this.comboBox1.Text = "Afficher";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // panelPrescription
+            // 
+            this.panelPrescription.Controls.Add(this.btnRetirerPrescription);
+            this.panelPrescription.Controls.Add(this.btnPrecedentPrescription);
+            this.panelPrescription.Controls.Add(this.btnPremierPrescription);
+            this.panelPrescription.Controls.Add(this.label26);
+            this.panelPrescription.Controls.Add(this.edtRetirerPrescription);
+            this.panelPrescription.Controls.Add(this.btnSuivantPrescription);
+            this.panelPrescription.Controls.Add(this.btnDernierPrescription);
+            this.panelPrescription.Controls.Add(this.btnViderListePrescription);
+            this.panelPrescription.Controls.Add(this.btnSupprimerPrescription);
+            this.panelPrescription.Controls.Add(this.btnModifierPrescription);
+            this.panelPrescription.Controls.Add(this.btnCreerPrescription);
+            this.panelPrescription.Controls.Add(this.lbxPrescriptions);
+            this.panelPrescription.Controls.Add(this.label25);
+            this.panelPrescription.Controls.Add(this.dtpDateInscriptionPrescription);
+            this.panelPrescription.Controls.Add(this.cbxActivePrescription);
+            this.panelPrescription.Controls.Add(this.label24);
+            this.panelPrescription.Controls.Add(this.edtNumeroPrescription);
+            this.panelPrescription.Controls.Add(this.label23);
+            this.panelPrescription.Location = new System.Drawing.Point(674, 140);
+            this.panelPrescription.Name = "panelPrescription";
+            this.panelPrescription.Size = new System.Drawing.Size(462, 318);
+            this.panelPrescription.TabIndex = 4;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(14, 72);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(101, 13);
+            this.label23.TabIndex = 5;
+            this.label23.Text = "Numero prescription";
+            // 
+            // edtNumeroPrescription
+            // 
+            this.edtNumeroPrescription.Location = new System.Drawing.Point(17, 89);
+            this.edtNumeroPrescription.Name = "edtNumeroPrescription";
+            this.edtNumeroPrescription.Size = new System.Drawing.Size(100, 20);
+            this.edtNumeroPrescription.TabIndex = 6;
+            this.edtNumeroPrescription.Text = "236517";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(14, 68);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(0, 13);
+            this.label24.TabIndex = 7;
+            // 
+            // cbxActivePrescription
+            // 
+            this.cbxActivePrescription.AutoSize = true;
+            this.cbxActivePrescription.Location = new System.Drawing.Point(127, 67);
+            this.cbxActivePrescription.Name = "cbxActivePrescription";
+            this.cbxActivePrescription.Size = new System.Drawing.Size(56, 17);
+            this.cbxActivePrescription.TabIndex = 9;
+            this.cbxActivePrescription.Text = "Active";
+            this.cbxActivePrescription.UseVisualStyleBackColor = true;
+            // 
+            // dtpDateInscriptionPrescription
+            // 
+            this.dtpDateInscriptionPrescription.Location = new System.Drawing.Point(15, 39);
+            this.dtpDateInscriptionPrescription.Name = "dtpDateInscriptionPrescription";
+            this.dtpDateInscriptionPrescription.Size = new System.Drawing.Size(200, 20);
+            this.dtpDateInscriptionPrescription.TabIndex = 10;
+            this.dtpDateInscriptionPrescription.Value = new System.DateTime(2022, 1, 2, 0, 0, 0, 0);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(15, 20);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(89, 13);
+            this.label25.TabIndex = 11;
+            this.label25.Text = "Date d\'Inscription";
+            // 
+            // lbxPrescriptions
+            // 
+            this.lbxPrescriptions.FormattingEnabled = true;
+            this.lbxPrescriptions.Location = new System.Drawing.Point(296, 5);
+            this.lbxPrescriptions.Name = "lbxPrescriptions";
+            this.lbxPrescriptions.Size = new System.Drawing.Size(150, 303);
+            this.lbxPrescriptions.TabIndex = 12;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(112, 232);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(100, 13);
+            this.label26.TabIndex = 48;
+            this.label26.Text = "Prescription à retirer";
+            // 
+            // edtRetirerPrescription
+            // 
+            this.edtRetirerPrescription.Location = new System.Drawing.Point(115, 253);
+            this.edtRetirerPrescription.Name = "edtRetirerPrescription";
+            this.edtRetirerPrescription.Size = new System.Drawing.Size(100, 20);
+            this.edtRetirerPrescription.TabIndex = 47;
+            this.edtRetirerPrescription.Text = "1";
+            // 
+            // btnSuivantPrescription
+            // 
+            this.btnSuivantPrescription.Location = new System.Drawing.Point(115, 175);
+            this.btnSuivantPrescription.Name = "btnSuivantPrescription";
+            this.btnSuivantPrescription.Size = new System.Drawing.Size(80, 36);
+            this.btnSuivantPrescription.TabIndex = 46;
+            this.btnSuivantPrescription.Text = "Suivant";
+            this.btnSuivantPrescription.UseVisualStyleBackColor = true;
+            // 
+            // btnDernierPrescription
+            // 
+            this.btnDernierPrescription.Location = new System.Drawing.Point(210, 174);
+            this.btnDernierPrescription.Name = "btnDernierPrescription";
+            this.btnDernierPrescription.Size = new System.Drawing.Size(80, 36);
+            this.btnDernierPrescription.TabIndex = 45;
+            this.btnDernierPrescription.Text = "Dernier";
+            this.btnDernierPrescription.UseVisualStyleBackColor = true;
+            // 
+            // btnViderListePrescription
+            // 
+            this.btnViderListePrescription.Location = new System.Drawing.Point(10, 177);
+            this.btnViderListePrescription.Name = "btnViderListePrescription";
+            this.btnViderListePrescription.Size = new System.Drawing.Size(75, 28);
+            this.btnViderListePrescription.TabIndex = 44;
+            this.btnViderListePrescription.Text = "Vider liste";
+            this.btnViderListePrescription.UseVisualStyleBackColor = true;
+            // 
+            // btnSupprimerPrescription
+            // 
+            this.btnSupprimerPrescription.Location = new System.Drawing.Point(10, 272);
+            this.btnSupprimerPrescription.Name = "btnSupprimerPrescription";
+            this.btnSupprimerPrescription.Size = new System.Drawing.Size(75, 28);
+            this.btnSupprimerPrescription.TabIndex = 43;
+            this.btnSupprimerPrescription.Text = "Supprimer";
+            this.btnSupprimerPrescription.UseVisualStyleBackColor = true;
+            // 
+            // btnModifierPrescription
+            // 
+            this.btnModifierPrescription.Location = new System.Drawing.Point(10, 226);
+            this.btnModifierPrescription.Name = "btnModifierPrescription";
+            this.btnModifierPrescription.Size = new System.Drawing.Size(75, 28);
+            this.btnModifierPrescription.TabIndex = 42;
+            this.btnModifierPrescription.Text = "Modifier";
+            this.btnModifierPrescription.UseVisualStyleBackColor = true;
+            // 
+            // btnCreerPrescription
+            // 
+            this.btnCreerPrescription.Location = new System.Drawing.Point(10, 128);
+            this.btnCreerPrescription.Name = "btnCreerPrescription";
+            this.btnCreerPrescription.Size = new System.Drawing.Size(75, 28);
+            this.btnCreerPrescription.TabIndex = 41;
+            this.btnCreerPrescription.Text = "Créer";
+            this.btnCreerPrescription.UseVisualStyleBackColor = true;
+            // 
+            // btnPrecedentPrescription
+            // 
+            this.btnPrecedentPrescription.Location = new System.Drawing.Point(210, 128);
+            this.btnPrecedentPrescription.Name = "btnPrecedentPrescription";
+            this.btnPrecedentPrescription.Size = new System.Drawing.Size(80, 36);
+            this.btnPrecedentPrescription.TabIndex = 50;
+            this.btnPrecedentPrescription.Text = "Précédent";
+            this.btnPrecedentPrescription.UseVisualStyleBackColor = true;
+            // 
+            // btnPremierPrescription
+            // 
+            this.btnPremierPrescription.Location = new System.Drawing.Point(115, 128);
+            this.btnPremierPrescription.Name = "btnPremierPrescription";
+            this.btnPremierPrescription.Size = new System.Drawing.Size(80, 36);
+            this.btnPremierPrescription.TabIndex = 49;
+            this.btnPremierPrescription.Text = "Premier";
+            this.btnPremierPrescription.UseVisualStyleBackColor = true;
+            // 
+            // btnRetirerPrescription
+            // 
+            this.btnRetirerPrescription.Location = new System.Drawing.Point(115, 279);
+            this.btnRetirerPrescription.Name = "btnRetirerPrescription";
+            this.btnRetirerPrescription.Size = new System.Drawing.Size(75, 23);
+            this.btnRetirerPrescription.TabIndex = 51;
+            this.btnRetirerPrescription.Text = "Retirer";
+            this.btnRetirerPrescription.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1215, 598);
+            this.Controls.Add(this.panelPrescription);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.panelEmploye);
             this.Controls.Add(this.panelPharmacie);
@@ -795,6 +1000,8 @@ namespace projetPharmacie
             this.menuStrip1.PerformLayout();
             this.panelEmploye.ResumeLayout(false);
             this.panelEmploye.PerformLayout();
+            this.panelPrescription.ResumeLayout(false);
+            this.panelPrescription.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -872,6 +1079,25 @@ namespace projetPharmacie
         private System.Windows.Forms.ListBox lbxEmploye;
         private System.Windows.Forms.Button btnViderListe;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Panel panelPrescription;
+        private System.Windows.Forms.Button btnRetirerPrescription;
+        private System.Windows.Forms.Button btnPrecedentPrescription;
+        private System.Windows.Forms.Button btnPremierPrescription;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox edtRetirerPrescription;
+        private System.Windows.Forms.Button btnSuivantPrescription;
+        private System.Windows.Forms.Button btnDernierPrescription;
+        private System.Windows.Forms.Button btnViderListePrescription;
+        private System.Windows.Forms.Button btnSupprimerPrescription;
+        private System.Windows.Forms.Button btnModifierPrescription;
+        private System.Windows.Forms.Button btnCreerPrescription;
+        private System.Windows.Forms.ListBox lbxPrescriptions;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.DateTimePicker dtpDateInscriptionPrescription;
+        private System.Windows.Forms.CheckBox cbxActivePrescription;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox edtNumeroPrescription;
+        private System.Windows.Forms.Label label23;
     }
 }
 
